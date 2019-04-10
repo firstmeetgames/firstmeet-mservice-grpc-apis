@@ -12,19 +12,22 @@ import "google/protobuf/field_mask.proto";
 message Event {
   EventCategory category = 1;
   oneof message {
-    UserAddedEvent userAddedEvent = 2;
-    UserUpdatedEvent userUpdatedEvent = 3;
-    OrderCreatedEvent orderCreatedEvent = 4;
-    OrderPayedEvent orderPayedEvent = 5;
+    UserAddedEvent user_added_event = 2;
+    UserUpdatedEvent user_updated_event = 3;
+    OrderCreatedEvent order_created_event = 4;
+    OrderPayedEvent order_payed_event = 5;
   }
+  int32 handled_times = 10000;
 }
 
 enum EventCategory {
   UNKNOWN = 0;
   USER_ADD_EVENT = 1;
   USER_UPDATE_EVENT = 2;
-  ORDER_CREATED_EVENT = 3;
-  ORDER_PAYED_EVENT = 4;
+}
+
+enum EventQueue {
+  EVENT_QUEUE = 0;
 }
 
 enum Channel {
@@ -92,3 +95,5 @@ message OrderPayedEvent {
   Channel channel = 2;
   google.protobuf.Timestamp created_at = 10;
 }
+
+
