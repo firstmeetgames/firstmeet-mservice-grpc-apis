@@ -1,9 +1,9 @@
 syntax = "proto3";
-package firstmeetgames.api.paycenter;
+package firstmeetgames.api.paycenter.channel;
 
 
 option java_multiple_files = true;
-option java_package = "com.github.firstmeetgames.mservice.grpc.apis.paycenter";
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.paycenter.channel";
 option java_outer_classname = "OrderProto";
 
 

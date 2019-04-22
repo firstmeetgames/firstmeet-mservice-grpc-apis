@@ -1,0 +1,46 @@
+syntax = "proto3";
+package firstmeetgames.api.paycenter.channel;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.paycenter.channel";
+option java_outer_classname = "PaycenterChannelApiProto";
+
+
+import "google/api/annotations.proto";
+import "firstmeetgames/api/common/common.proto";
+import "firstmeetgames/api/paycenter/channel/order.proto";
+import "google/rpc/status.proto";
+import "google/protobuf/timestamp.proto";
+
+// The paycenter channel service definition.
+service PaycenterChannelApi {
+  // Verify order
+  rpc VerifyOrder (VerifyOrderRequest) returns (VerifyOrderResponse) {
+  }
+
+  //Get order
+  rpc GetOrder (GetOrderRequest) returns (GetOrderResponse) {
+  }
+
+}
+
+message VerifyOrderRequest {
+  string order_id = 1;
+  bool force = 2;
+
+}
+
+message VerifyOrderResponse {
+  string result = 1; //OK or FAIL
+  google.rpc.Status status = 2;
+}
+
+message GetOrderRequest {
+  string order_id = 1;
+}
+
+message GetOrderResponse {
+  Order order = 1;
+  google.rpc.Status status = 2;
+}
