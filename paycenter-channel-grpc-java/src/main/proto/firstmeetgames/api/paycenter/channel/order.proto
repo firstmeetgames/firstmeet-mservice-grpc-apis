@@ -39,10 +39,10 @@ message OrderItem {
   string role_id = 8;
   string role_name = 9;
   string card_no = 10;
-  int64 price = 11;
+  int32 price = 11;
   string currency = 12;
-  int64 quantity = 13;
-  int64 ruby_quantity = 14;
+  int32 quantity = 13;
+  int32 ruby_quantity = 14;
   string created_at = 15;
   string updated_at = 16;
 
