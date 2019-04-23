@@ -16,18 +16,28 @@ import "google/protobuf/timestamp.proto";
 service ShippingcenterApi {
 
   //Notify shipping
-  rpc NotifyShipping (ShippingOrderRequest) returns (ShippingOrderResponse) {
+  rpc NotifyShipping (DeliverynoteRequest) returns (DeliverynoteResponse) {
   }
 
 }
 
-message ShippingOrderRequest {
-  string order_id = 1;
-  firstmeetgames.api.common.PaymentChannel channel = 2;
+message DeliverynoteRequest {
+  repeated Deliverynote deliverynote = 1;
   google.protobuf.Timestamp created_at = 10;
 }
 
-message ShippingOrderResponse {
-  string result = 1;  //OK or FAIL
+message Deliverynote {
+  string order_id = 1;
+  firstmeetgames.api.common.PaymentChannel channel = 2;
+}
+
+message DeliverynoteResponse {
+  repeated DeliverynoteResult deliverynoteResult = 1;
   google.rpc.Status status = 2;
+}
+
+message DeliverynoteResult {
+  string order_id = 1;
+  firstmeetgames.api.common.PaymentChannel channel = 2;
+  string result = 3; //OK or FAIL
 }
