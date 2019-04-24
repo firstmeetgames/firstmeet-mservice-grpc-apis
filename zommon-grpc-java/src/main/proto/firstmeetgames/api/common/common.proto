@@ -89,9 +89,9 @@ message Crontab{
 
 enum PaymentChannel {
   NONE = 0;
-  WEIXIN = 1;
-  ZHIFUBAO = 2;
-  YIBAO = 3;
+  CHUJIAN_WEIXIN = 1;
+  CHUJIAN_ZHIFUBAO = 2;
+  CHUJIAN_YIBAO = 3;
   HUAWEI = 4;
   OPPO = 5;
   VIVO = 6;
@@ -114,5 +114,7 @@ enum PaymentChannel {
   DANGLE = 23;
   APPLE = 24;
   GOOGLE = 25;
-  BLUE = 26;
+  BLUE_12CALL = 26;
+  BLUE_TRUEMONEY = 27;
+  BLUE_BLUECOINS = 28;
 }
