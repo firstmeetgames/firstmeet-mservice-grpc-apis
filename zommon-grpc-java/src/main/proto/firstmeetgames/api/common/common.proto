@@ -87,7 +87,7 @@ message Crontab{
     string weekdays = 8;
 }
 
-enum PaymentChannel {
+enum PayChannel {
   NONE = 0;
   CHUJIAN_WEIXIN = 1;
   CHUJIAN_ZHIFUBAO = 2;

@@ -9,6 +9,7 @@ option java_outer_classname = "ShippingcenterApiProto";
 
 import "google/api/annotations.proto";
 import "firstmeetgames/api/common/common.proto";
+import "firstmeetgames/api/shippingcenter/deliverynote.proto";
 import "google/rpc/status.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -16,28 +17,42 @@ import "google/protobuf/timestamp.proto";
 service ShippingcenterApi {
 
   //Notify shipping
-  rpc NotifyShipping (DeliverynoteRequest) returns (DeliverynoteResponse) {
+  rpc NotifyShipping (NotifyShippingRequest) returns (NotifyShippingResponse) {
   }
 
+  //Get deliverynote
+  rpc GetDeliverynote (GetDeliverynoteRequest) returns (GetDeliverynoteResponse) {
+  }
 }
 
-message DeliverynoteRequest {
-  repeated Deliverynote deliverynote = 1;
+message NotifyShippingRequest {
+  repeated ShippingOrder shipping_order = 1;
   google.protobuf.Timestamp created_at = 10;
 }
 
-message Deliverynote {
+message ShippingOrder {
   string order_id = 1;
-  firstmeetgames.api.common.PaymentChannel channel = 2;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
 }
 
-message DeliverynoteResponse {
-  repeated DeliverynoteResult deliverynoteResult = 1;
+message NotifyShippingResponse {
+  repeated ShippingResult shipping_result = 1;
   google.rpc.Status status = 2;
 }
 
-message DeliverynoteResult {
+message ShippingResult {
   string order_id = 1;
-  firstmeetgames.api.common.PaymentChannel channel = 2;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
   string result = 3; //OK or FAIL
 }
+
+message GetDeliverynoteRequest {
+  string order_id = 1;
+}
+
+message GetDeliverynoteResponse {
+  Deliverynote deliverynote = 1;
+  google.rpc.Status status = 2;
+}
+
+

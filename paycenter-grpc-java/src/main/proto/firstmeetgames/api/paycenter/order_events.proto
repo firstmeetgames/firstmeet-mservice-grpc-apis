@@ -27,23 +27,19 @@ enum OrderEventCategory {
 
 message OrderCreatedEvent {
   string order_id = 1;
-  firstmeetgames.api.common.PaymentChannel channel = 2;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
   google.protobuf.Timestamp created_at = 100;
 }
 
 message OrderPaidEvent {
   string order_id = 1;
-  firstmeetgames.api.common.PaymentChannel channel = 2;
-  string status = 3;
-  string reason = 4;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
   google.protobuf.Timestamp created_at = 100;
 }
 
 message OrderShippedEvent {
   string order_id = 1;
-  firstmeetgames.api.common.PaymentChannel channel = 2;
-  string status = 3;
-  string reason = 4;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
   google.protobuf.Timestamp created_at = 100;
 }
 

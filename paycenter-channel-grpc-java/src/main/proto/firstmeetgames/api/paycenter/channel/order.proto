@@ -20,7 +20,7 @@ message Order {
   bool is_verified = 6;
   string ttg = 7;
   string developer_payload = 8;
-  string status = 9;
+  string pay_status = 9;
   string reason = 10;
   string created_at = 11;
   string updated_at = 12;
