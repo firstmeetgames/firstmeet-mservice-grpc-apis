@@ -18,7 +18,9 @@ message Event {
     OrderPaidEvent order_paid_event = 5;
     OrderShippedEvent order_shipped_event = 6;
   }
-  int32 handled_times = 10000;
+  int32 delay = 100; //unit MILLISECONDS
+  int32 handled_step = 101;
+  int32 handled_times = 102;
 }
 
 enum EventCategory {
