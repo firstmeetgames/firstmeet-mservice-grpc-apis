@@ -36,14 +36,7 @@ message ShippingOrder {
 }
 
 message NotifyShippingResponse {
-  repeated ShippingResult shipping_result = 1;
-  google.rpc.Status status = 2;
-}
-
-message ShippingResult {
-  string order_id = 1;
-  firstmeetgames.api.common.PayChannel pay_channel = 2;
-  string result = 3; //OK or FAIL
+  google.rpc.Status status = 1;
 }
 
 message GetDeliverynoteRequest {
