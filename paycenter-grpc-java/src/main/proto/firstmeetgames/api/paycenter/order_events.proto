@@ -34,12 +34,14 @@ message OrderCreatedEvent {
 message OrderPaidEvent {
   string order_id = 1;
   firstmeetgames.api.common.PayChannel pay_channel = 2;
+  string status = 3;
   google.protobuf.Timestamp created_at = 100;
 }
 
 message OrderShippedEvent {
   string order_id = 1;
   firstmeetgames.api.common.PayChannel pay_channel = 2;
+  string status = 3;
   google.protobuf.Timestamp created_at = 100;
 }
 
