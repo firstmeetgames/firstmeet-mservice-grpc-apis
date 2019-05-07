@@ -8,9 +8,7 @@ plugins {
 dependencies {
     compile "com.google.api.grpc:proto-google-common-protos:${googleCommonProtosVersion}"
     compile project(":zommon-grpc-java")
-
 }
-
 
 protobuf {
     // Configure the protoc executable
@@ -49,4 +47,4 @@ idea {
     }
 }
 
-project.logger.lifecycle("~~~~~~~~~~~~~~~~~eventgate-grpc-java   BUILD !~~~~~~~~~~~~~~~~~~")
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~ shippingcenter-grpc-java   BUILD !~~~~~~~~~~~~~~~~~~")

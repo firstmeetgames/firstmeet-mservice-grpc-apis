@@ -1,0 +1,48 @@
+syntax = "proto3";
+package firstmeetgames.api.paycenter;
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.paycenter";
+option java_outer_classname = "OrderEventsProto";
+
+import "firstmeetgames/api/common/common.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/field_mask.proto";
+
+message OrderEvent {
+  OrderEventCategory category = 1;
+  oneof message {
+    OrderCreatedEvent order_created_event = 2;
+    OrderPaidEvent order_paid_event = 3;
+    OrderShippedEvent order_shipped_event = 4;
+  }
+}
+
+enum OrderEventCategory {
+  UNKNOWN = 0;
+  ORDER_CREATED_EVENT = 1;
+  ORDER_PAID_EVENT = 2;
+  ORDER_SHIPPED_EVENT = 3;
+}
+
+message OrderCreatedEvent {
+  string order_id = 1;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
+  google.protobuf.Timestamp created_at = 100;
+}
+
+message OrderPaidEvent {
+  string order_id = 1;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
+  string status = 3;
+  google.protobuf.Timestamp created_at = 100;
+}
+
+message OrderShippedEvent {
+  string order_id = 1;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
+  string status = 3;
+  google.protobuf.Timestamp created_at = 100;
+}
+
+

@@ -27,13 +27,6 @@ message Location {
     double longitude = 2;
 }
 
-enum PaymentChannel {
-    ALIPAY = 0;
-    WECHAT = 1;
-    UNIONPAY = 2;
-    CASH = 3;
-}
-
 message Address {
     // resource id
     string name = 1;
@@ -92,4 +85,36 @@ message Crontab{
     string days = 6;
     string months = 7;
     string weekdays = 8;
+}
+
+enum PayChannel {
+  NONE = 0;
+  CHUJIAN_WEIXIN = 1;
+  CHUJIAN_ZHIFUBAO = 2;
+  CHUJIAN_YIBAO = 3;
+  HUAWEI = 4;
+  OPPO = 5;
+  VIVO = 6;
+  UC = 7;
+  YYB = 8;
+  XIAOMI = 9;
+  SAMSUNG = 10;
+  MEIZU = 11;
+  NUBIA = 12;
+  PPS = 13;
+  QIHOO360 = 14;
+  LENOVO = 15;
+  GIONEE = 16;
+  YUEWEN = 17;
+  BAIDU = 18;
+  F4399 = 19;
+  PAPA = 20;
+  COOLPAD = 21;
+  BILIBILI = 22;
+  DANGLE = 23;
+  APPLE = 24;
+  GOOGLE = 25;
+  BLUE_12CALL = 26;
+  BLUE_TRUEMONEY = 27;
+  BLUE_BLUECOINS = 28;
 }

@@ -16,8 +16,11 @@ message Event {
     UserUpdatedEvent user_updated_event = 3;
     OrderCreatedEvent order_created_event = 4;
     OrderPaidEvent order_paid_event = 5;
+    OrderShippedEvent order_shipped_event = 6;
   }
-  int32 handled_times = 10000;
+  int32 delay = 100; //unit MILLISECONDS
+  int32 handled_step = 101;
+  int32 handled_times = 102;
 }
 
 enum EventCategory {
@@ -26,40 +29,11 @@ enum EventCategory {
   USER_UPDATED_EVENT = 2;
   ORDER_CREATED_EVENT = 3;
   ORDER_PAID_EVENT = 4;
+  ORDER_SHIPPED_EVENT = 5;
 }
 
 enum EventQueue {
   EVENT_QUEUE = 0;
-}
-
-enum Channel {
-  NONE = 0;
-  WEIXIN = 1;
-  ZHIFUBAO = 2;
-  YIBAO = 3;
-  HUAWEI = 4;
-  OPPO = 5;
-  VIVO = 6;
-  UC = 7;
-  YYB = 8;
-  XIAOMI = 9;
-  SAMSUNG = 10;
-  MEIZU = 11;
-  NUBIA = 12;
-  PPS = 13;
-  QIHOO360 = 14;
-  LENOVO = 15;
-  GIONEE = 16;
-  YUEWEN = 17;
-  BAIDU = 18;
-  F4399 = 19;
-  PAPA = 20;
-  COOLPAD = 21;
-  BILIBILI = 22;
-  DANGLE = 23;
-  APPLE = 24;
-  GOOGLE = 25;
-  BLUE = 26;
 }
 
 message UserInfo {
@@ -88,13 +62,21 @@ message UserUpdatedEvent {
 
 message OrderCreatedEvent {
   string order_id = 1;
-  Channel channel = 2;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
   google.protobuf.Timestamp created_at = 10;
 }
 
 message OrderPaidEvent {
   string order_id = 1;
-  Channel channel = 2;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
+  string status = 3;
+  google.protobuf.Timestamp created_at = 10;
+}
+
+message OrderShippedEvent {
+  string order_id = 1;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
+  string status = 3;
   google.protobuf.Timestamp created_at = 10;
 }
 

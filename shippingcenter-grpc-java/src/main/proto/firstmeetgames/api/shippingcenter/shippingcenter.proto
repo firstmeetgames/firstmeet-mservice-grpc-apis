@@ -1,0 +1,51 @@
+syntax = "proto3";
+package firstmeetgames.api.shippingcenter;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.shippingcenter";
+option java_outer_classname = "ShippingcenterApiProto";
+
+
+import "google/api/annotations.proto";
+import "firstmeetgames/api/common/common.proto";
+import "firstmeetgames/api/shippingcenter/deliverynote.proto";
+import "google/rpc/status.proto";
+import "google/protobuf/timestamp.proto";
+
+// The shippingcenter service definition.
+service ShippingcenterApi {
+
+  //Notify shipping
+  rpc NotifyShipping (NotifyShippingRequest) returns (NotifyShippingResponse) {
+  }
+
+  //Get deliverynote
+  rpc GetDeliverynote (GetDeliverynoteRequest) returns (GetDeliverynoteResponse) {
+  }
+}
+
+message NotifyShippingRequest {
+  repeated ShippingOrder shipping_order = 1;
+  google.protobuf.Timestamp created_at = 10;
+}
+
+message ShippingOrder {
+  string order_id = 1;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
+}
+
+message NotifyShippingResponse {
+  google.rpc.Status status = 1;
+}
+
+message GetDeliverynoteRequest {
+  string order_id = 1;
+}
+
+message GetDeliverynoteResponse {
+  Deliverynote deliverynote = 1;
+  google.rpc.Status status = 2;
+}
+
+

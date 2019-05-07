@@ -8,4 +8,6 @@ include 'usercenter-grpc-java'
 include 'welfarepay-grpc-java'
 include 'zommon-grpc-java'
 include 'paycenter-grpc-java'
+include 'shippingcenter-grpc-java'
+include 'paycenter-channel-grpc-java'
 

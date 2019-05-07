@@ -8,7 +8,6 @@ plugins {
 dependencies {
     compile "com.google.api.grpc:proto-google-common-protos:${googleCommonProtosVersion}"
     compile project(":zommon-grpc-java")
-
 }
 
 
@@ -49,4 +48,4 @@ idea {
     }
 }
 
-project.logger.lifecycle("~~~~~~~~~~~~~~~~~eventgate-grpc-java   BUILD !~~~~~~~~~~~~~~~~~~")
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~ paycenter-channel-grpc-java   BUILD !~~~~~~~~~~~~~~~~~~")
