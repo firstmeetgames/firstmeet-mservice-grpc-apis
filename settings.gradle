@@ -10,4 +10,5 @@ include 'zommon-grpc-java'
 include 'paycenter-grpc-java'
 include 'shippingcenter-grpc-java'
 include 'paycenter-channel-grpc-java'
+include 'shoppecenter-grpc-java'
 

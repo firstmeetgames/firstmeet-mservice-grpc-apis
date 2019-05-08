@@ -11,12 +11,13 @@ message Deliverynote {
   string user_id = 2;
   string client_id = 3;
   string pay_channel = 4;
-  string shipping_status = 5;
-  string shipping_at = 6;
-  string ttg = 7;
-  string developer_payload = 8;
-  string created_at = 9;
-  repeated DeliverynoteItem item = 10;
+  string pay_way = 5;
+  string shipping_status = 6;
+  string shipping_at = 7;
+  string ttg = 8;
+  string developer_payload = 9;
+  string created_at = 10;
+  repeated DeliverynoteItem item = 100;
 }
 
 message DeliverynoteItem {
