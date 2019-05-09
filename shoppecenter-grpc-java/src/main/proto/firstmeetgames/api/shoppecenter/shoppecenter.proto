@@ -1,0 +1,34 @@
+syntax = "proto3";
+package firstmeetgames.api.shoppecenter;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.shoppecenter";
+option java_outer_classname = "ShoppecenterApiProto";
+
+
+import "google/api/annotations.proto";
+import "firstmeetgames/api/common/common.proto";
+import "firstmeetgames/api/shoppecenter/variant.proto";
+import "google/rpc/status.proto";
+import "google/protobuf/timestamp.proto";
+
+// The shoppecenter service definition.
+service ShoppecenterApi {
+
+  //Get variants
+  rpc GetVariant (GetVariantRequest) returns (GetVariantResponse) {
+  }
+}
+
+message GetVariantRequest {
+  string client_id = 1;
+  firstmeetgames.api.common.PayChannel pay_channel = 2;
+}
+
+message GetVariantResponse {
+  Variant variant = 1;
+  google.rpc.Status status = 2;
+}
+
+

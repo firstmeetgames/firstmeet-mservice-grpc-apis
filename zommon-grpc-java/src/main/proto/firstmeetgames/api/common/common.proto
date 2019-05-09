@@ -114,7 +114,5 @@ enum PayChannel {
   DANGLE = 23;
   APPLE = 24;
   GOOGLE = 25;
-  BLUE_12CALL = 26;
-  BLUE_TRUEMONEY = 27;
-  BLUE_BLUECOINS = 28;
+  BLUEPAY = 26;
 }

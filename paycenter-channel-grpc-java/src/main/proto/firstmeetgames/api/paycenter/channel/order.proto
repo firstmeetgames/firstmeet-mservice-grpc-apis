@@ -20,25 +20,27 @@ message Order {
   bool is_verified = 6;
   string ttg = 7;
   string developer_payload = 8;
-  string pay_status = 9;
-  string reason = 10;
-  string created_at = 11;
-  string updated_at = 12;
+  string pay_way = 9;
+  string card_no = 10;
+  string pay_status = 11;
+  string reason = 12;
+  string created_at = 13;
+  string updated_at = 14;
 
-  repeated OrderItem item = 13;
+  repeated OrderItem item = 100;
 }
 
 message OrderItem {
   int64 item_id = 1;
   string variant_id = 2;
   string product_id = 3;
-  string server_id = 4;
-  string server_name = 5;
-  string region_id = 6;
-  string region_name = 7;
-  string role_id = 8;
-  string role_name = 9;
-  string card_no = 10;
+  string channel_product_id = 4;
+  string server_id = 5;
+  string server_name = 6;
+  string region_id = 7;
+  string region_name = 8;
+  string role_id = 9;
+  string role_name = 10;
   int32 price = 11;
   string currency = 12;
   int32 quantity = 13;
