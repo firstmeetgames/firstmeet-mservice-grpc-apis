@@ -6,12 +6,9 @@ option java_multiple_files = true;
 option java_package = "com.github.firstmeetgames.mservice.grpc.apis.paycenter";
 option java_outer_classname = "PaycenterApiProto";
 
-
-import "google/api/annotations.proto";
 import "firstmeetgames/api/common/common.proto";
 import "firstmeetgames/api/paycenter/order_events.proto";
 import "google/rpc/status.proto";
-import "google/protobuf/timestamp.proto";
 
 // The paycenter service definition.
 service PaycenterApi {

@@ -7,7 +7,6 @@ option java_outer_classname = "OrderEventsProto";
 
 import "firstmeetgames/api/common/common.proto";
 import "google/protobuf/timestamp.proto";
-import "google/protobuf/field_mask.proto";
 
 message OrderEvent {
   OrderEventCategory category = 1;

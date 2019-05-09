@@ -7,7 +7,6 @@ option java_package = "com.github.firstmeetgames.mservice.grpc.apis.shippingcent
 option java_outer_classname = "ShippingcenterApiProto";
 
 
-import "google/api/annotations.proto";
 import "firstmeetgames/api/common/common.proto";
 import "firstmeetgames/api/shippingcenter/deliverynote.proto";
 import "google/rpc/status.proto";

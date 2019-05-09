@@ -7,11 +7,8 @@ option java_package = "com.github.firstmeetgames.mservice.grpc.apis.paycenter.ch
 option java_outer_classname = "PaycenterChannelApiProto";
 
 
-import "google/api/annotations.proto";
-import "firstmeetgames/api/common/common.proto";
 import "firstmeetgames/api/paycenter/channel/order.proto";
 import "google/rpc/status.proto";
-import "google/protobuf/timestamp.proto";
 
 // The paycenter channel service definition.
 service PaycenterChannelApi {
