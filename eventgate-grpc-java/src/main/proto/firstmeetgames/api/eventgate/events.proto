@@ -5,7 +5,6 @@ option java_multiple_files = true;
 option java_package = "com.github.firstmeetgames.mservice.grpc.apis.eventgate";
 option java_outer_classname = "EventsProto";
 
-import "firstmeetgames/api/common/common.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/field_mask.proto";
 
@@ -17,6 +16,7 @@ message Event {
     OrderCreatedEvent order_created_event = 4;
     OrderPaidEvent order_paid_event = 5;
     OrderShippedEvent order_shipped_event = 6;
+    OrderReVerifiedEvent order_reverified_event = 7;
   }
   int32 delay = 100; //unit MILLISECONDS
   int32 handled_step = 101;
@@ -30,6 +30,7 @@ enum EventCategory {
   ORDER_CREATED_EVENT = 3;
   ORDER_PAID_EVENT = 4;
   ORDER_SHIPPED_EVENT = 5;
+  ORDER_REVERIFIED_EVENT = 6;
 }
 
 enum EventQueue {
@@ -62,21 +63,27 @@ message UserUpdatedEvent {
 
 message OrderCreatedEvent {
   string order_id = 1;
-  firstmeetgames.api.common.PayChannel pay_channel = 2;
+  string pay_channel = 2;
   google.protobuf.Timestamp created_at = 10;
 }
 
 message OrderPaidEvent {
   string order_id = 1;
-  firstmeetgames.api.common.PayChannel pay_channel = 2;
+  string pay_channel = 2;
   string status = 3;
   google.protobuf.Timestamp created_at = 10;
 }
 
 message OrderShippedEvent {
   string order_id = 1;
-  firstmeetgames.api.common.PayChannel pay_channel = 2;
+  string pay_channel = 2;
   string status = 3;
+  google.protobuf.Timestamp created_at = 10;
+}
+
+message OrderReVerifiedEvent {
+  string order_id = 1;
+  string pay_channel = 2;
   google.protobuf.Timestamp created_at = 10;
 }
 
