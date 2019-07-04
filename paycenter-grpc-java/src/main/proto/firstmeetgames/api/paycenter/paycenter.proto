@@ -44,6 +44,6 @@ message QueryOrderRequest {
 }
 
 message QueryOrderResponse {
-  Order order = 1;
+  OrderPage order_page = 1;
   google.rpc.Status status = 2;
 }
