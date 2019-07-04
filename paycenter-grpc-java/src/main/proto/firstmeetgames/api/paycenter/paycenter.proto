@@ -8,6 +8,7 @@ option java_outer_classname = "PaycenterApiProto";
 
 import "firstmeetgames/api/common/common.proto";
 import "firstmeetgames/api/paycenter/order_events.proto";
+import "firstmeetgames/api/paycenter/order_query_result.proto";
 import "google/rpc/status.proto";
 
 // The paycenter service definition.
@@ -17,6 +18,10 @@ service PaycenterApi {
   rpc PublishOrderEvent (PublishOrderEventRequest) returns (PublishOrderEventResponse) {
 
   }
+
+  //query order
+  rpc QueryOrder (QueryOrderRequest) returns (QueryOrderResponse) {
+  }
 }
 
 message PublishOrderEventRequest {
@@ -25,4 +30,20 @@ message PublishOrderEventRequest {
 
 message PublishOrderEventResponse {
   google.rpc.Status status = 1;
+}
+
+message QueryOrderRequest {
+  string order_id = 1;
+  string user_id = 2;
+  string client_id = 3;
+  string channel_order_id = 4;
+  string start_date = 5;
+  string end_date = 6;
+  int32 page_size = 7;
+  int32 page = 8;
+}
+
+message QueryOrderResponse {
+  Order order = 1;
+  google.rpc.Status status = 2;
 }
