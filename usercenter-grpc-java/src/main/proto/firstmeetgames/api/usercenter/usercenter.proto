@@ -11,9 +11,12 @@ import "firstmeetgames/api/usercenter/user_profile.proto";
 import "google/rpc/status.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
-
+import "firstmeetgames/api/usercenter/client_query_result.proto";
 // The greeter service definition.
 service UsercenterApi {
+
+  rpc QueryClients (QueryClientRequest) returns (QueryClientResponse) {
+  }
 
   rpc GetClient (GetClientRequest) returns (GetClientResponse) {
   }
@@ -46,6 +49,18 @@ message GetClientResponse {
   string authorized_grant_types = 4;
 
   google.rpc.Status status = 5;
+}
+
+message QueryClientRequest {
+  string client_name = 1;
+  int32 page_size = 2;
+  int32 page = 3;
+}
+
+message QueryClientResponse {
+  ClientPage client_page = 1;
+
+  google.rpc.Status status = 2;
 }
 
 message CheckClientRequest {

@@ -1,0 +1,27 @@
+syntax = "proto3";
+package firstmeetgames.api.usercenter;
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.usercenter";
+option java_outer_classname = "ClientProto";
+
+message ClientPage {
+  int32 total_pages = 1;
+  int32 current_page = 2;
+  int32 page_size = 3;
+  int64 total_elements = 4;
+  repeated Client client = 5;
+}
+message Client {
+  string client_id = 1;
+
+  string client_secret = 2;
+
+  string scopes = 3;
+
+  string created_at = 4;
+
+  string updated_at = 5;
+
+  map<string, string> extension_data = 100;
+}
