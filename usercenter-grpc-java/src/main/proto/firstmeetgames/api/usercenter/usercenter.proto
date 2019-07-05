@@ -58,7 +58,7 @@ message QueryClientRequest {
 }
 
 message QueryClientResponse {
-  Client client = 1;
+  ClientPage client_page = 1;
 
   google.rpc.Status status = 2;
 }
