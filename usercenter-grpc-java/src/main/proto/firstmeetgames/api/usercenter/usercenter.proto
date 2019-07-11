@@ -21,6 +21,15 @@ service UsercenterApi {
   rpc GetClient (GetClientRequest) returns (GetClientResponse) {
   }
 
+  rpc UpdateClient (UpdateClientRequest) returns (UpdateClientResponse) {
+  }
+
+  rpc AddClient (AddClientRequest) returns (AddClientResponse) {
+  }
+
+  rpc DeletetClient (DeleteClientRequest) returns (DeleteClientResponse) {
+  }
+
   rpc CheckClient (CheckClientRequest) returns (CheckClientResponse) {
   }
 
@@ -59,8 +68,36 @@ message QueryClientRequest {
 
 message QueryClientResponse {
   ClientPage client_page = 1;
+  google.rpc.Status status = 2;
+}
+
+message UpdateClientRequest{
+  Client client = 1;
+  google.rpc.Status status = 2;
+}
+
+message UpdateClientResponse {
+  google.rpc.Status status = 1;
+}
+
+message AddClientRequest{
+  Client client = 1;
+  google.rpc.Status status = 2;
+}
+
+message AddClientResponse {
+  google.rpc.Status status = 1;
+}
+
+message DeleteClientRequest {
+
+  string client_id = 1;
 
   google.rpc.Status status = 2;
+}
+
+message DeleteClientResponse {
+  google.rpc.Status status = 1;
 }
 
 message CheckClientRequest {
