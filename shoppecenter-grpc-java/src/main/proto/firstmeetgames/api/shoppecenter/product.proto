@@ -18,8 +18,8 @@ message Product {
   string product_id = 1;
   string channel_product_id = 2;
   string product_name = 3;
-  int32 product_image = 4;
-  int32 description = 5;
+  string product_image = 4;
+  string description = 5;
   string is_onsale = 6;
   string type = 7;
   string created_at = 8;
