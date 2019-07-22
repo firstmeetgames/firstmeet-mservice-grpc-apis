@@ -20,8 +20,8 @@ message Product {
   string product_name = 3;
   string product_image = 4;
   string description = 5;
-  string is_onsale = 6;
-  string type = 7;
+  bool is_onsale = 6;
+  int32 type = 7;
   string created_at = 8;
   string updated_at = 9;
 
