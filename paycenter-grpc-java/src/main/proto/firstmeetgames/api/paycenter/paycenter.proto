@@ -41,6 +41,7 @@ message QueryOrderRequest {
   string end_date = 6;
   int32 page_size = 7;
   int32 page = 8;
+  string status = 9;
 }
 
 message QueryOrderResponse {
