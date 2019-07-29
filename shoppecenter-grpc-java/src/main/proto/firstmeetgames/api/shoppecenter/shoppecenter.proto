@@ -9,6 +9,7 @@ option java_outer_classname = "ShoppecenterApiProto";
 
 import "firstmeetgames/api/shoppecenter/variant.proto";
 import "firstmeetgames/api/shoppecenter/product.proto";
+import "firstmeetgames/api/shoppecenter/goods.proto";
 import "google/rpc/status.proto";
 
 // The shoppecenter service definition.
@@ -31,6 +32,21 @@ service ShoppecenterApi {
   }
 
   rpc DeleteProduct (DeleteProductRequest) returns (DeleteProductResponse) {
+  }
+
+  rpc GetGoods (GetGoodsRequest) returns (GetGoodsResponse) {
+  }
+
+  rpc QueryGoods (QueryGoodsRequest) returns (QueryGoodsResponse) {
+  }
+
+  rpc UpdateGoods (UpdateGoodsRequest) returns (UpdateGoodsResponse) {
+  }
+
+  rpc AddGoods (AddGoodsRequest) returns (AddGoodsResponse) {
+  }
+
+  rpc DeleteGoods (DeleteGoodsRequest) returns (DeleteGoodsResponse) {
   }
 }
 
@@ -84,9 +100,55 @@ message AddProductResponse {
 }
 
 message DeleteProductRequest {
-  string client_id = 1;
+  string product_id = 1;
 }
 
 message DeleteProductResponse {
+  google.rpc.Status status = 1;
+}
+
+message GetGoodsRequest {
+  string product_id = 1;
+}
+
+message GetGoodsResponse {
+  Goods goods = 1;
+  google.rpc.Status status = 2;
+}
+
+message QueryGoodsRequest {
+  string shoppe_id = 1;
+  string product_id = 2;
+  string is_onsale = 3;
+  int32 page_size = 4;
+  int32 page = 5;
+}
+
+message QueryGoodsResponse {
+  GoodsPage goods_page = 1;
+  google.rpc.Status status = 2;
+}
+
+message UpdateGoodsRequest {
+  Goods goods = 1;
+}
+
+message UpdateGoodsResponse {
+  google.rpc.Status status = 1;
+}
+
+message AddGoodsRequest {
+  Goods goods = 1;
+}
+
+message AddGoodsResponse {
+  google.rpc.Status status = 1;
+}
+
+message DeleteGoodsRequest {
+  string goods_id = 1;
+}
+
+message DeleteGoodsResponse {
   google.rpc.Status status = 1;
 }
