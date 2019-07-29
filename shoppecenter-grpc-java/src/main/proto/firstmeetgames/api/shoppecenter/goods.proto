@@ -1,0 +1,29 @@
+syntax = "proto3";
+package firstmeetgames.api.shoppecenter;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.shoppecenter";
+option java_outer_classname = "GoodsProto";
+
+message GoodsPage {
+  int32 total_pages = 1;
+  int32 current_page = 2;
+  int32 page_size = 3;
+  int64 total_elements = 4;
+  repeated Goods goods = 5;
+}
+
+message Goods {
+  string variant_id = 1;
+  string shoppe_id = 2;
+  string product_id = 3;
+  int32 price = 4;
+  int32 quantity = 5;
+  string currency = 6;
+  bool is_onsale = 7;
+  string created_at = 8;
+  string updated_at = 9;
+
+  map<string, string> extension_data = 100;
+}
