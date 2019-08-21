@@ -108,7 +108,7 @@ message DeleteProductResponse {
 }
 
 message GetGoodsRequest {
-  string product_id = 1;
+  string goods_id = 1;
 }
 
 message GetGoodsResponse {

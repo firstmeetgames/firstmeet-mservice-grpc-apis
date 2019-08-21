@@ -1,0 +1,76 @@
+syntax = "proto3";
+package firstmeetgames.api.shoppecenter;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.shoppecenter";
+option java_outer_classname = "ShoppecenterApiProto";
+
+
+import "firstmeetgames/api/notice/notice.proto";
+
+import "google/rpc/status.proto";
+service NoticeApi {
+  rpc GetNotice (GetNoticeRequest) returns (GetNoticeResponse) {
+  }
+
+  rpc QueryNotices (QueryNoticeRequest) returns (QueryNoticeResponse) {
+  }
+
+  rpc UpdateNotice (UpdateNoticeRequest) returns (UpdateNoticeResponse) {
+  }
+
+  rpc AddNotice (AddNoticeRequest) returns (AddNoticeResponse) {
+  }
+
+  rpc DeleteNotice (DeleteNoticeRequest) returns (DeleteNoticeResponse) {
+  }
+}
+message GetNoticeRequest {
+  string notice_id = 1;
+}
+
+message GetNoticeResponse {
+  Notice notice = 1;
+  google.rpc.Status status = 2;
+}
+
+message QueryNoticeRequest {
+  string notice_type = 1;
+  string category = 2;
+  string title = 3;
+  string status = 4;
+  string start_at = 5;
+  string end_at = 6;
+  int32 page_size = 7;
+  int32 page = 8;
+}
+
+message QueryNoticeResponse {
+  NoticePage notice_page = 1;
+  google.rpc.Status status = 2;
+}
+
+message UpdateNoticeRequest {
+  Notice notice = 1;
+}
+
+message UpdateNoticeResponse {
+  google.rpc.Status status = 1;
+}
+
+message AddNoticeRequest {
+  Notice notice = 1;
+}
+
+message AddNoticeResponse {
+  google.rpc.Status status = 1;
+}
+
+message DeleteNoticeRequest {
+  string notice_id = 1;
+}
+
+message DeleteNoticeResponse {
+  google.rpc.Status status = 1;
+}
