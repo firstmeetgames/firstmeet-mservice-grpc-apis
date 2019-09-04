@@ -9,6 +9,13 @@ option java_outer_classname = "UserProfileProto";
 import "firstmeetgames/api/common/common.proto";
 import "google/protobuf/timestamp.proto";
 
+message UserPage {
+  int32 total_pages = 1;
+  int32 current_page = 2;
+  int32 page_size = 3;
+  int64 total_elements = 4;
+  repeated UserProfile user = 5;
+}
 message UserProfile {
   string user_id = 1;
   string username = 2;

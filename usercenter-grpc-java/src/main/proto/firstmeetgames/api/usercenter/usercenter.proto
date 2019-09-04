@@ -42,6 +42,14 @@ service UsercenterApi {
   rpc UpdateUserProfile (UpdateUserProfileRequest) returns (UpdateUserProfileResponse) {
   }
 
+  rpc QueryUsers (QueryUsersRequest) returns (QueryUsersResponse) {
+  }
+
+  rpc GetUser (GetUserRequest) returns (GetUserResponse) {
+  }
+
+  rpc ResetPassword (ResetPasswordRequest) returns (ResetPasswordResponse) {
+  }
 }
 
 message GetClientRequest {
@@ -79,7 +87,7 @@ message QueryClientResponse {
   google.rpc.Status status = 2;
 }
 
-message UpdateClientRequest{
+message UpdateClientRequest {
   Client client = 1;
   google.rpc.Status status = 2;
 }
@@ -88,7 +96,7 @@ message UpdateClientResponse {
   google.rpc.Status status = 1;
 }
 
-message AddClientRequest{
+message AddClientRequest {
   Client client = 1;
   google.rpc.Status status = 2;
 }
@@ -156,5 +164,37 @@ message UpdateUserProfileRequest {
 }
 
 message UpdateUserProfileResponse {
+  google.rpc.Status status = 1;
+}
+
+message GetUserRequest {
+  string user_id = 1;
+}
+
+message GetUserResponse {
+  UserProfile user = 1;
+  google.rpc.Status status = 9;
+}
+
+message QueryUsersRequest {
+  string client_id = 1;
+  string user_id = 2;
+  string user_name = 3;
+  string user_source = 4;
+  int32 page_size = 5;
+  int32 page = 6;
+}
+
+message QueryUsersResponse {
+  UserPage user_page = 1;
+  google.rpc.Status status = 2;
+}
+
+message ResetPasswordRequest {
+  UserProfile user = 1;
+  google.rpc.Status status = 2;
+}
+
+message ResetPasswordResponse {
   google.rpc.Status status = 1;
 }
