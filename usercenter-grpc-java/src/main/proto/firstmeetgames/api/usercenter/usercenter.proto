@@ -48,7 +48,7 @@ service UsercenterApi {
   rpc GetUser (GetUserRequest) returns (GetUserResponse) {
   }
 
-  rpc ResetPassword (ResetVisitorPasswordRequest) returns (ResetVisitorPasswordResponse) {
+  rpc ResetPassword (ResetPasswordRequest) returns (ResetPasswordResponse) {
   }
 
   rpc ResetVisitorPassword (ResetVisitorPasswordRequest) returns (ResetVisitorPasswordResponse) {
