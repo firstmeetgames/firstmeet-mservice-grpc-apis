@@ -48,7 +48,10 @@ service UsercenterApi {
   rpc GetUser (GetUserRequest) returns (GetUserResponse) {
   }
 
-  rpc ResetPassword (ResetPasswordRequest) returns (ResetPasswordResponse) {
+  rpc ResetPassword (ResetVisitorPasswordRequest) returns (ResetVisitorPasswordResponse) {
+  }
+
+  rpc ResetVisitorPassword (ResetVisitorPasswordRequest) returns (ResetVisitorPasswordResponse) {
   }
 }
 
@@ -193,9 +196,21 @@ message QueryUsersResponse {
 message ResetPasswordRequest {
   string client_id = 1;
   string user_id = 2;
-  google.rpc.Status status = 3;
+  string password = 3;
+  google.rpc.Status status = 4;
 }
 
 message ResetPasswordResponse {
+  google.rpc.Status status = 1;
+}
+
+message ResetVisitorPasswordRequest {
+  string client_id = 1;
+  string user_id = 2;
+  string password = 3;
+  google.rpc.Status status = 4;
+}
+
+message ResetVisitorPasswordResponse {
   google.rpc.Status status = 1;
 }
