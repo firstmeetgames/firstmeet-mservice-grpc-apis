@@ -191,8 +191,9 @@ message QueryUsersResponse {
 }
 
 message ResetPasswordRequest {
-  UserProfile user = 1;
-  google.rpc.Status status = 2;
+  string client_id = 1;
+  string user_id = 2;
+  google.rpc.Status status = 3;
 }
 
 message ResetPasswordResponse {
