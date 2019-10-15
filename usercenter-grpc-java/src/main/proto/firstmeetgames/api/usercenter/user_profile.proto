@@ -16,6 +16,7 @@ message UserPage {
   int64 total_elements = 4;
   repeated UserProfile user = 5;
 }
+
 message UserProfile {
   string user_id = 1;
   string username = 2;
@@ -27,5 +28,6 @@ message UserProfile {
   bool real_name_authenticated = 8;
   string created_at = 9;
   string updated_at = 10;
+  string ttg = 11;
   map<string, string> extension_data = 100;
 }
