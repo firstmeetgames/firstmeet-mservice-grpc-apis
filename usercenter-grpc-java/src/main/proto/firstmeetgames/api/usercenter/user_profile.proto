@@ -27,5 +27,6 @@ message UserProfile {
   bool real_name_authenticated = 8;
   string created_at = 9;
   string updated_at = 10;
+  string ttg = 11;
   map<string, string> extension_data = 100;
 }
