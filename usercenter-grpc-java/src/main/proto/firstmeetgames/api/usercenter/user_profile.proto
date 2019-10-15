@@ -16,6 +16,7 @@ message UserPage {
   int64 total_elements = 4;
   repeated UserProfile user = 5;
 }
+
 message UserProfile {
   string user_id = 1;
   string username = 2;
