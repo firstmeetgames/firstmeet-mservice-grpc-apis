@@ -29,6 +29,6 @@ message UserProfile {
   string created_at = 9;
   string updated_at = 10;
   string ttg = 11;
-  bool tooken_valid = 12;
+  bool token_valid = 12;
   map<string, string> extension_data = 100;
 }
