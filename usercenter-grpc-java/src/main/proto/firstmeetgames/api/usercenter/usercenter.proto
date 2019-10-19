@@ -12,7 +12,8 @@ import "google/rpc/status.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
 import "firstmeetgames/api/usercenter/client_query_result.proto";
-// The greeter service definition.
+
+
 service UsercenterApi {
 
   rpc QueryClients (QueryClientRequest) returns (QueryClientResponse) {
@@ -46,12 +47,6 @@ service UsercenterApi {
   }
 
   rpc GetUser (GetUserRequest) returns (GetUserResponse) {
-  }
-
-  rpc ResetPassword (ResetPasswordRequest) returns (ResetPasswordResponse) {
-  }
-
-  rpc ResetVisitorPassword (ResetVisitorPasswordRequest) returns (ResetVisitorPasswordResponse) {
   }
 
   rpc ResetTokenValid (ResetTokenValidRequest) returns (ResetTokenValidResponse) {
@@ -192,31 +187,10 @@ message QueryUsersRequest {
 }
 
 message QueryUsersResponse {
-  UserPage user_page = 1;
+  UserProfilePage user_page = 1;
   google.rpc.Status status = 2;
 }
 
-message ResetPasswordRequest {
-  string client_id = 1;
-  string user_id = 2;
-  string password = 3;
-  google.rpc.Status status = 4;
-}
-
-message ResetPasswordResponse {
-  google.rpc.Status status = 1;
-}
-
-message ResetVisitorPasswordRequest {
-  string client_id = 1;
-  string user_id = 2;
-  string password = 3;
-  google.rpc.Status status = 4;
-}
-
-message ResetVisitorPasswordResponse {
-  google.rpc.Status status = 1;
-}
 
 message ResetTokenValidRequest {
   string client_id = 1;

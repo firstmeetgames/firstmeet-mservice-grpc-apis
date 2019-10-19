@@ -17,6 +17,7 @@ message Event {
     OrderPaidEvent order_paid_event = 5;
     OrderShippedEvent order_shipped_event = 6;
     OrderReVerifiedEvent order_reverified_event = 7;
+    OrderAmendedEvent order_amended_event = 8;
   }
   int32 delay = 100; //unit MILLISECONDS
   int32 handled_step = 101;
@@ -31,6 +32,7 @@ enum EventCategory {
   ORDER_PAID_EVENT = 4;
   ORDER_SHIPPED_EVENT = 5;
   ORDER_REVERIFIED_EVENT = 6;
+  ORDER_AMENDED_EVENT = 7;
 }
 
 enum EventQueue {
@@ -88,4 +90,10 @@ message OrderReVerifiedEvent {
   google.protobuf.Timestamp created_at = 10;
 }
 
+message OrderAmendedEvent {
+  string order_id = 1;
+  string pay_channel = 2;
+  string channel_order_id = 3;
+  google.protobuf.Timestamp created_at = 10;
+}
 

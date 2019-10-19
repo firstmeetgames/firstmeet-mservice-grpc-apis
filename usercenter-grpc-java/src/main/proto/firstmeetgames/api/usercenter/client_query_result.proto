@@ -12,6 +12,7 @@ message ClientPage {
   int64 total_elements = 4;
   repeated Client client = 5;
 }
+
 message Client {
 
   string client_id = 1;
