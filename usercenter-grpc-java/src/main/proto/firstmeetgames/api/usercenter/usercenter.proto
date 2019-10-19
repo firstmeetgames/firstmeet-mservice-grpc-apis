@@ -222,7 +222,7 @@ message ResetTokenValidRequest {
   string client_id = 1;
   string user_id = 2;
   string token_source = 3;
-  string valid = 4;
+  bool valid = 4;
   google.rpc.Status status = 5;
 }
 
