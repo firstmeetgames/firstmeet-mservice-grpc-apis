@@ -20,6 +20,10 @@ service PaycenterChannelApi {
   rpc GetOrder (GetOrderRequest) returns (GetOrderResponse) {
   }
 
+  //Amend order
+  rpc AmendOrder (AmendOrderRequest) returns (AmendOrderResponse) {
+  }
+
 }
 
 message VerifyOrderRequest {
@@ -38,6 +42,16 @@ message GetOrderRequest {
 }
 
 message GetOrderResponse {
+  Order order = 1;
+  google.rpc.Status status = 2;
+}
+
+message AmendOrderRequest {
+  string order_id = 1;
+  string channel_order_id = 2;
+}
+
+message AmendOrderResponse {
   Order order = 1;
   google.rpc.Status status = 2;
 }

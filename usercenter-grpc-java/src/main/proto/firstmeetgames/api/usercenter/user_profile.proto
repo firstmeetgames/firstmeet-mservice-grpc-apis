@@ -9,12 +9,12 @@ option java_outer_classname = "UserProfileProto";
 import "firstmeetgames/api/common/common.proto";
 import "google/protobuf/timestamp.proto";
 
-message UserPage {
+message UserProfilePage {
   int32 total_pages = 1;
   int32 current_page = 2;
   int32 page_size = 3;
   int64 total_elements = 4;
-  repeated UserProfile user = 5;
+  repeated UserProfile user_profile = 5;
 }
 
 message UserProfile {
@@ -29,5 +29,6 @@ message UserProfile {
   string created_at = 9;
   string updated_at = 10;
   string ttg = 11;
+  bool enabled = 12;
   map<string, string> extension_data = 100;
 }

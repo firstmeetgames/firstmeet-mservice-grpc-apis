@@ -1,0 +1,46 @@
+syntax = "proto3";
+package firstmeetgames.api.usercenter.channel;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.usercenter.channel";
+option java_outer_classname = "UsercenterChannelApiProto";
+
+
+import "google/rpc/status.proto";
+
+
+service UsercenterChannelApi {
+
+    //重新设置用户密码
+    rpc ResetPassword (ResetPasswordRequest) returns (ResetPasswordResponse) {
+    }
+
+    //封禁或者解封用户
+    rpc EnableUser (EnableUserRequest) returns (EnableUserResponse) {
+    }
+}
+
+
+message ResetPasswordRequest {
+    string client_id = 1;
+    string user_id = 2;
+    string password = 3;
+    google.rpc.Status status = 4;
+}
+
+message ResetPasswordResponse {
+    google.rpc.Status status = 1;
+}
+
+
+message EnableUserRequest {
+    string client_id = 1;
+    string user_id = 2;
+    bool  enabled = 3;
+    google.rpc.Status status = 4;
+}
+
+message EnableUserResponse {
+    google.rpc.Status status = 1;
+}
