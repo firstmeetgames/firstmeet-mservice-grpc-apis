@@ -53,6 +53,9 @@ service UsercenterApi {
 
   rpc ResetVisitorPassword (ResetVisitorPasswordRequest) returns (ResetVisitorPasswordResponse) {
   }
+
+  rpc ResetTokenValid (ResetTokenValidRequest) returns (ResetTokenValidResponse) {
+  }
 }
 
 message GetClientRequest {
@@ -212,5 +215,17 @@ message ResetVisitorPasswordRequest {
 }
 
 message ResetVisitorPasswordResponse {
+  google.rpc.Status status = 1;
+}
+
+message ResetTokenValidRequest {
+  string client_id = 1;
+  string user_id = 2;
+  string token_source = 3;
+  string valid = 4;
+  google.rpc.Status status = 5;
+}
+
+message ResetTokenValidResponse {
   google.rpc.Status status = 1;
 }
