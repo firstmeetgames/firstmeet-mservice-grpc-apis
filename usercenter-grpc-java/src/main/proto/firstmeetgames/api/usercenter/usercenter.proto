@@ -58,23 +58,8 @@ message GetClientRequest {
 }
 
 message GetClientResponse {
-  string client_id = 1;
-
-  string client_secret = 2;
-
-  string scopes = 3;
-
-  string authorized_grant_types = 4;
-
-  string created_at = 5;
-
-  string updated_at = 6;
-
-  string client_name = 7;
-
-  string company = 8;
-
-  google.rpc.Status status = 9;
+  Client client = 1;
+  google.rpc.Status status = 10;
 }
 
 message QueryClientRequest {
@@ -90,7 +75,6 @@ message QueryClientResponse {
 
 message UpdateClientRequest {
   Client client = 1;
-  google.rpc.Status status = 2;
 }
 
 message UpdateClientResponse {
@@ -99,7 +83,6 @@ message UpdateClientResponse {
 
 message AddClientRequest {
   Client client = 1;
-  google.rpc.Status status = 2;
 }
 
 message AddClientResponse {
@@ -107,10 +90,7 @@ message AddClientResponse {
 }
 
 message DeleteClientRequest {
-
   string client_id = 1;
-
-  google.rpc.Status status = 2;
 }
 
 message DeleteClientResponse {
@@ -118,34 +98,28 @@ message DeleteClientResponse {
 }
 
 message CheckClientRequest {
-
   string client_id = 1;
-
   string client_secret = 2;
 }
 
 message CheckClientResponse {
-  google.rpc.Status status = 1;
+  bool enabled = 1;
+  google.rpc.Status status = 10;
 }
 
 message CreateUserTokenRequest {
+
   string client_id = 1;
-
   string user_id = 2;
-
   string user_source = 3;
-
   string username = 4;
-
   string ttg = 5;
 }
 
 message CreateUserTokenResponse {
 
   string access_token = 1;
-
   string refresh_token = 2;
-
   google.rpc.Status status = 3;
 }
 
