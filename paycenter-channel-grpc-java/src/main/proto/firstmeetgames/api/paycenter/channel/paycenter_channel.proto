@@ -52,6 +52,6 @@ message AmendOrderRequest {
 }
 
 message AmendOrderResponse {
-  Order order = 1;
+  string result = 1; //OK or FAIL
   google.rpc.Status status = 2;
 }
