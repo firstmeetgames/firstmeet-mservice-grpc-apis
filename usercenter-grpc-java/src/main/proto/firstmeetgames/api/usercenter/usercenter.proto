@@ -174,7 +174,6 @@ message ResetTokenValidRequest {
   string user_id = 2;
   string token_source = 3;
   bool valid = 4;
-  google.rpc.Status status = 5;
 }
 
 message ResetTokenValidResponse {
@@ -186,7 +185,6 @@ message EnableUserRequest {
     string channel_id = 2;
     string user_id = 3;
     bool  enabled = 4;
-    google.rpc.Status status = 5;
 }
 
 message EnableUserResponse {
