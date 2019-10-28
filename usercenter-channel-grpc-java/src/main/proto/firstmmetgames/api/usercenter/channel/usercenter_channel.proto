@@ -26,7 +26,6 @@ message ResetPasswordRequest {
     string client_id = 1;
     string user_id = 2;
     string password = 3;
-    google.rpc.Status status = 4;
 }
 
 message ResetPasswordResponse {
@@ -38,7 +37,6 @@ message EnableUserRequest {
     string client_id = 1;
     string user_id = 2;
     bool  enabled = 3;
-    google.rpc.Status status = 4;
 }
 
 message EnableUserResponse {
