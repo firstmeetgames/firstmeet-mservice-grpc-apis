@@ -1,10 +1,12 @@
 syntax = "proto3";
-package firstmeetgames.api.web.recharge;
+package firstmeetgames.api.web.recharge.whitelist;
 
 
 option java_multiple_files = true;
-option java_package = "com.github.firstmeetgames.mservice.grpc.apis.web.recharge";
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.web.recharge.whitelist";
 option java_outer_classname = "RechargeWhiteApiProto";
+
+import "google/rpc/status.proto";
 
 // The recharge whitelist service definition.
 service RechargeWhiteApi {
@@ -26,7 +28,7 @@ service RechargeWhiteApi {
   }
 
   //Clear recharge history cache
-  rpc ClearCache () returns (ClearCacheResponse){
+  rpc ClearCache (ClearCacheRequest) returns (ClearCacheResponse){
   }
 
 }
@@ -68,6 +70,8 @@ message DeleteResponse {
   google.rpc.Status status = 2;
 }
 
+message ClearCacheRequest{
+}
 message ClearCacheResponse {
   string result = 1; //OK or FAIL
   google.rpc.Status status = 2;

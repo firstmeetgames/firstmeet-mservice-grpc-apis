@@ -1,11 +1,12 @@
 syntax = "proto3";
-package firstmeetgames.api.web.recharge;
+package firstmeetgames.api.web.recharge.config;
 
 
 option java_multiple_files = true;
-option java_package = "com.github.firstmeetgames.mservice.grpc.apis.web.recharge";
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.web.recharge.config";
 option java_outer_classname = "RechargeConfigApiProto";
 
+import "google/rpc/status.proto";
 
 // The recharge config service definition.
 service RechargeConfigApi {
@@ -27,7 +28,7 @@ service RechargeConfigApi {
   }
 
   //Clear recharge config cache
-  rpc ClearCache () returns (ClearCacheResponse) {
+  rpc ClearCache (ClearCacheRequest) returns (ClearCacheResponse) {
   }
 
 }
@@ -72,7 +73,8 @@ message DeleteResponse {
   google.rpc.Status status = 2;
 }
 
-
+message ClearCacheRequest{
+}
 message ClearCacheResponse {
   string result = 1; //OK or FAIL
   google.rpc.Status status = 2;

@@ -1,10 +1,12 @@
 syntax = "proto3";
-package firstmeetgames.api.web.recharge;
+package firstmeetgames.api.web.recharge.history;
 
 
 option java_multiple_files = true;
-option java_package = "com.github.firstmeetgames.mservice.grpc.apis.web.recharge";
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.web.recharge.history";
 option java_outer_classname = "RechargeHistoryApiProto";
+
+import "google/rpc/status.proto";
 
 // The recharge history service definition.
 service RechargeHistoryApi {
@@ -26,7 +28,7 @@ service RechargeHistoryApi {
   }
 
   //Clear recharge history cache
-  rpc ClearCache () returns (ClearCacheResponse){
+  rpc ClearCache (ClearCacheRequest) returns (ClearCacheResponse){
   }
 
 }
@@ -84,6 +86,8 @@ message DeleteResponse {
   google.rpc.Status status = 2;
 }
 
+message ClearCacheRequest{
+}
 message ClearCacheResponse {
   string result = 1; //OK or FAIL
   google.rpc.Status status = 2;
