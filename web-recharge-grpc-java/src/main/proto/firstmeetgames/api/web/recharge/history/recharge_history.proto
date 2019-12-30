@@ -100,7 +100,7 @@ message RechargeHistoryResultPage {
   int32 page_size = 3;
   string total_elements = 4;
 
-  repeated RechargeHistory historys = 100;
+  repeated RechargeHistory history = 100;
 }
 
 message RechargeHistory {
@@ -115,7 +115,7 @@ message RechargeHistory {
   string role_name = 9;
   int32 pay_way = 10;
   string amount = 11;
-  string currecy = 12;
+  string currency = 12;
   string swap_coin_amount = 13;
   string give_coin_amount = 14;
   string created_at = 15;

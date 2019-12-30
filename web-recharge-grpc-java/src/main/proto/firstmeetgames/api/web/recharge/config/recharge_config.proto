@@ -86,7 +86,7 @@ message RechargeConfigResultPage {
   int32 page_size = 3;
   string total_elements = 4;
 
-  repeated RechargeConfig configs = 100;
+  repeated RechargeConfig config = 100;
 }
 message RechargeConfig {
   string id = 1;
