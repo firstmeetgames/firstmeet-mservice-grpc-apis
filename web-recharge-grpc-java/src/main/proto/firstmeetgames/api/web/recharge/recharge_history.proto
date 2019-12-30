@@ -1,0 +1,119 @@
+syntax = "proto3";
+package firstmeetgames.api.web.recharge;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.web.recharge";
+option java_outer_classname = "RechargeHistoryApiProto";
+
+// The recharge history service definition.
+service RechargeHistoryApi {
+
+  //Get recharge history by conditions
+  rpc GetHistory (GetHistoryRequest) returns (GetHistoryResponse) {
+  }
+
+  //Query recharge history
+  rpc QueryRechargeHistory (QueryRechargeHistoryRequest) returns (QueryRechargeHistoryResponse) {
+  }
+
+  //Save recharge history
+  rpc Save (SaveRequest) returns (SaveResponse) {
+  }
+
+  //Delete recharge history
+  rpc Delete (DeleteRequest) returns (DeleteResponse) {
+  }
+
+  //Clear recharge history cache
+  rpc ClearCache () returns (ClearCacheResponse){
+  }
+
+}
+
+message GetHistoryRequest {
+  string client_id = 1;
+  string user_id = 2;
+  string server_id = 3;
+  string region_id = 4;
+  string role_id = 5;
+}
+message GetHistoryResponse {
+  RechargeHistory recharge_history = 1;
+  google.rpc.Status status = 2;
+}
+
+message QueryRechargeHistoryRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+}
+message QueryRechargeHistoryResponse {
+  RechargeHistoryResultPage recharge_history_result_page = 1;
+  google.rpc.Status status = 2;
+}
+
+message SaveRequest {
+    string client_id = 1;
+    string user_id = 2;
+    string server_id = 3;
+    string server_name = 4;
+    string region_id = 5;
+    string region_name = 6;
+    string role_id = 7;
+    string role_name = 8;
+    int32 pay_way = 9;
+    string amount = 10;
+    string currecy = 11;
+    string swap_coin_amount = 12;
+    string give_coin_amount = 13;
+}
+message SaveResponse {
+  RechargeHistory recharge_history = 1;
+  google.rpc.Status status = 2;
+}
+
+message DeleteRequest {
+  string client_id = 1;
+  string user_id = 2;
+  string server_id = 3;
+  string region_id = 4;
+  string role_id = 5;
+}
+message DeleteResponse {
+  int32 affected_results = 1;
+  google.rpc.Status status = 2;
+}
+
+message ClearCacheResponse {
+  string result = 1; //OK or FAIL
+  google.rpc.Status status = 2;
+}
+
+
+message RechargeHistoryResultPage {
+  int32 total_pages = 1;
+  int32 current_page = 2;
+  int32 page_size = 3;
+  int32 total_elements = 4;
+
+  repeated RechargeHistory historys = 100;
+}
+
+message RechargeHistory {
+  string id = 1;
+  string client_id = 2;
+  string user_id = 3;
+  string server_id = 4;
+  string server_name = 5;
+  string region_id = 6;
+  string region_name = 7;
+  string role_id = 8;
+  string role_name = 9;
+  int32 pay_way = 10;
+  string amount = 11;
+  string currecy = 12;
+  string swap_coin_amount = 13;
+  string give_coin_amount = 14;
+  string created_at = 15;
+  string updated_at = 16;
+}

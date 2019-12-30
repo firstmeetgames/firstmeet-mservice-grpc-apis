@@ -1,0 +1,91 @@
+syntax = "proto3";
+package firstmeetgames.api.web.recharge;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.web.recharge";
+option java_outer_classname = "RechargeWhiteApiProto";
+
+// The recharge whitelist service definition.
+service RechargeWhiteApi {
+
+  //Get recharge whitelist
+  rpc GetWhiteList (GetWhiteListRequest) returns (GetWhiteListResponse) {
+  }
+
+  //Query recharge whitelists
+  rpc QueryRechargeWhite (QueryRechargeWhiteRequest) returns (QueryRechargeWhiteResponse) {
+  }
+
+  //Save recharge whitelist
+  rpc Save (SaveRequest) returns (SaveResponse) {
+  }
+
+  //Delete recharge history
+  rpc Delete (DeleteRequest) returns (DeleteResponse) {
+  }
+
+  //Clear recharge history cache
+  rpc ClearCache () returns (ClearCacheResponse){
+  }
+
+}
+
+message GetWhiteListRequest {
+  string client_id = 1;
+  string user_id = 2;
+}
+message GetWhiteListResponse {
+  RechargeWhiteList whitelist = 1;
+  google.rpc.Status status = 2;
+}
+
+message QueryRechargeWhiteRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+}
+message QueryRechargeWhiteResponse {
+  RechargeWhiteResultPage recharge_white_result_page = 1;
+  google.rpc.Status status = 2;
+}
+
+message SaveRequest{
+  string client_id = 1;
+  string user_id = 2;
+  string enabled = 3;
+}
+message SaveResponse{
+  RechargeWhiteList whitelist = 1;
+  google.rpc.Status status = 2;
+}
+
+message DeleteRequest {
+  string client_id = 1;
+  string user_id = 2;
+}
+message DeleteResponse {
+  int32 affected_results = 1;
+  google.rpc.Status status = 2;
+}
+
+message ClearCacheResponse {
+  string result = 1; //OK or FAIL
+  google.rpc.Status status = 2;
+}
+
+message RechargeWhiteResultPage {
+  int32 total_pages = 1;
+  int32 current_page = 2;
+  int32 page_size = 3;
+  int32 total_elements = 4;
+
+  repeated RechargeWhiteList whitelists = 100;
+}
+message RechargeWhiteList{
+  string id = 1;
+  string client_id = 2;
+  string user_id = 3;
+  string enabled = 4;
+  string created_at = 5;
+  string updated_at = 6;
+}
