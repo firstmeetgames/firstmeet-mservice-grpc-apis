@@ -1,0 +1,35 @@
+syntax = "proto3";
+package firstmeetgames.api.gameinfo;
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.gameinfo";
+option java_outer_classname = "GameinfoProto";
+
+message GameinfoPage {
+  int32 total_pages = 1;
+  int32 current_page = 2;
+  int32 page_size = 3;
+  int64 total_elements = 4;
+  repeated Gameinfo gameinfo = 5;
+}
+
+message Gameinfo {
+
+  string client_id = 1;
+
+  string url = 2;
+
+  string url_type = 3;
+
+  string mocked = 4;
+
+  string created_at = 5;
+
+  string updated_at = 6;
+
+  string client_name = 7;
+
+  string request_type = 8;
+
+  map<string, string> extension_data = 100;
+}
