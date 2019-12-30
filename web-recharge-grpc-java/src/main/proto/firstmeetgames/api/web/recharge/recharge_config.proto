@@ -1,0 +1,101 @@
+syntax = "proto3";
+package firstmeetgames.api.web.recharge;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.web.recharge";
+option java_outer_classname = "RechargeConfigApiProto";
+
+
+// The recharge config service definition.
+service RechargeConfigApi {
+
+  //Get recharge config
+  rpc GetByClientId (GetRechargeConfigRequest) returns (GetRechargeConfigResponse) {
+  }
+
+  //Query recharge config
+  rpc QueryRechargeConfig (QueryRechargeConfigRequest) returns (QueryRechargeConfigResponse) {
+  }
+
+  //Save
+  rpc save (SaveRequest) returns (SaveResponse) {
+  }
+
+  //Delete recharge config
+  rpc Delete (DeleteRequest) returns (DeleteResponse) {
+  }
+
+  //Clear recharge config cache
+  rpc ClearCache () returns (ClearCacheResponse) {
+  }
+
+}
+
+message GetRechargeConfigRequest {
+  string client_id = 1;
+}
+message GetRechargeConfigResponse {
+  RechargeConfig recharge_config = 1;
+  google.rpc.Status status = 2;
+}
+
+message QueryRechargeConfigRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+}
+message QueryRechargeConfigResponse {
+  RechargeConfigResultPage recharge_config_result_page = 1;
+  google.rpc.Status status = 2;
+}
+
+message SaveRequest {
+  string client_id = 1;
+  string pay_way = 2;
+  string amount = 3;
+  string swap_ratio = 4;
+  int32 threshold = 5;
+  string give_ratio = 6;
+  string recharge_url = 7;
+  string tip_info = 8;
+}
+message SaveResponse {
+  RechargeConfig recharge_config = 1;
+  google.rpc.Status status = 2;
+}
+
+message DeleteRequest {
+  string client_id = 1;
+}
+message DeleteResponse {
+  int32 affected_results = 1;
+  google.rpc.Status status = 2;
+}
+
+
+message ClearCacheResponse {
+  string result = 1; //OK or FAIL
+  google.rpc.Status status = 2;
+}
+
+message RechargeConfigResultPage {
+  int32 total_pages = 1;
+  int32 current_page = 2;
+  int32 page_size = 3;
+  int32 total_elements = 4;
+
+  repeated RechargeConfig configs = 100;
+}
+message RechargeConfig {
+  string id = 1;
+  string client_id = 2;
+  string pay_way = 3;
+  string amount = 4;
+  string swap_ratio = 5;
+  string threshold = 6;
+  string give_ratio = 7;
+  string recharge_url = 8;
+  string tip_info = 9;
+  string created_at = 10;
+  string updated_at = 11;
+}
