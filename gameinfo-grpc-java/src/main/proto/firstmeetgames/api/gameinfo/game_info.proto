@@ -1,0 +1,77 @@
+syntax = "proto3";
+package firstmeetgames.api.gameinfo;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.gameinfo";
+option java_outer_classname = "GameInfoApiProto";
+
+import "firstmeetgames/api/common/common.proto";
+import "google/rpc/status.proto";
+import "google/protobuf/field_mask.proto";
+import "google/protobuf/timestamp.proto";
+import "firstmeetgames/api/gameinfo/game_info_query_result.proto";
+
+
+service GameInfoApi {
+  rpc QueryGameInfos(QueryGameInfoRequest) returns (QueryGameInfoResponse){
+  }
+  
+  rpc GetGameInfo (GetGameInfoRequest) returns (GetGameInfoResponse) {
+  }
+
+  rpc UpdateGameInfo (UpdateGameInfoRequest) returns (UpdateGameInfoResponse) {
+  }
+
+  rpc AddGameInfo (AddGameInfoRequest) returns (AddGameInfoResponse) {
+  }
+
+  rpc DeleteGameInfo (DeleteGameInfoRequest) returns (DeleteGameInfoResponse) {
+  }
+}
+
+message GetGameInfoRequest {
+  string client_id = 1;
+  string url_type = 2;
+}
+
+message GetGameInfoResponse {
+  GameInfo game_info = 1;
+  google.rpc.Status status = 10;
+}
+
+message QueryGameInfoRequest {
+  string client_id = 1;
+  int32 page_size = 2;
+  int32 page = 3;
+}
+
+message QueryGameInfoResponse {
+  GameInfoPage game_info_page = 1;
+  google.rpc.Status status = 2;
+}
+
+message UpdateGameInfoRequest {
+  GameInfo game_info = 1;
+}
+
+message UpdateGameInfoResponse {
+  google.rpc.Status status = 1;
+}
+
+message AddGameInfoRequest {
+  GameInfo game_info = 1;
+}
+
+message AddGameInfoResponse {
+  google.rpc.Status status = 1;
+}
+
+message DeleteGameInfoRequest {
+  string client_id = 1;
+  string url_type = 2;
+}
+
+message DeleteGameInfoResponse {
+  google.rpc.Status status = 1;
+}
