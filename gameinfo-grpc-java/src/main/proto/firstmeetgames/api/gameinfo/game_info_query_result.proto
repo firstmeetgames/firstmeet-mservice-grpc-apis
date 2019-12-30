@@ -15,21 +15,23 @@ message GameInfoPage {
 
 message GameInfo {
 
-  string client_id = 1;
+  string id = 1;
 
-  string client_name = 2;
+  string client_id = 2;
 
-  string url = 3;
+  string client_name = 3;
 
-  string url_type = 4;
+  string url = 4;
 
-  string request_type = 5;
+  string url_type = 5;
 
-  string mocked = 6;
+  string request_type = 6;
 
-  string created_at = 7;
+  string mocked = 7;
 
-  string updated_at = 8;
+  string created_at = 8;
+
+  string updated_at = 9;
 
   map<string, string> extension_data = 100;
 }
