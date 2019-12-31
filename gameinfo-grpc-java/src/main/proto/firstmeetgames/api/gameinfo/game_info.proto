@@ -28,6 +28,9 @@ service GameInfoApi {
 
   rpc DeleteGameInfo (DeleteGameInfoRequest) returns (DeleteGameInfoResponse) {
   }
+
+  rpc DeleteCache (DeleteCacheRequest) returns (DeleteCacheResponse) {
+  }
 }
 
 message GetGameInfoRequest {
@@ -74,4 +77,12 @@ message DeleteGameInfoRequest {
 
 message DeleteGameInfoResponse {
   google.rpc.Status status = 1;
+}
+
+message DeleteCacheRequest {
+}
+
+message DeleteCacheResponse {
+  string result = 1; //OK or FAIL
+  google.rpc.Status status = 2;
 }
