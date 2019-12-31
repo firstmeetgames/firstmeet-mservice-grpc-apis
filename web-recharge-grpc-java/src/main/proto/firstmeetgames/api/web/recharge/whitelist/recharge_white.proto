@@ -45,6 +45,8 @@ message GetWhiteListResponse {
 message QueryRechargeWhiteRequest {
   int32 page = 1;
   int32 page_size = 2;
+  string client_id = 3;
+  string user_id = 4;
 }
 message QueryRechargeWhiteResponse {
   RechargeWhiteResultPage recharge_white_result_page = 1;

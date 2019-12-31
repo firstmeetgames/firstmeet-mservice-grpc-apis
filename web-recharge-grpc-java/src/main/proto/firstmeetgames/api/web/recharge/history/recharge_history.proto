@@ -48,6 +48,11 @@ message GetHistoryResponse {
 message QueryRechargeHistoryRequest {
   int32 page = 1;
   int32 page_size = 2;
+  string client_id = 3;
+  string user_id = 4;
+  string server_id = 5;
+  string region_id = 6;
+  string role_id = 7;
 }
 message QueryRechargeHistoryResponse {
   RechargeHistoryResultPage recharge_history_result_page = 1;

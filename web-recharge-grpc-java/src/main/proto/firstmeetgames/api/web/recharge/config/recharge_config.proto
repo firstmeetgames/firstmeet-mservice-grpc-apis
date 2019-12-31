@@ -44,6 +44,7 @@ message GetRechargeConfigResponse {
 message QueryRechargeConfigRequest {
   int32 page = 1;
   int32 page_size = 2;
+  string client_id = 3;
 }
 message QueryRechargeConfigResponse {
   RechargeConfigResultPage recharge_config_result_page = 1;
