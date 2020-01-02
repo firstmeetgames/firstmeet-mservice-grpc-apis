@@ -14,6 +14,9 @@ import "firstmeetgames/api/gameinfo/game_info_query_result.proto";
 
 
 service GameInfoApi {
+  rpc QueryForRecharge(QueryForRechargeRequest) returns (QueryForRechargeResponse){
+  }
+
   rpc QueryGameInfos(QueryGameInfoRequest) returns (QueryGameInfoResponse){
   }
   
@@ -31,6 +34,16 @@ service GameInfoApi {
 
   rpc DeleteCache (DeleteCacheRequest) returns (DeleteCacheResponse) {
   }
+}
+
+message QueryForRechargeRequest {
+  string client_id = 1;
+  string user_id = 2;
+}
+
+message QueryForRechargeResponse {
+  GameInfoForRecharge game_info_for_recharge = 1;
+  google.rpc.Status status = 2;
 }
 
 message GetGameInfoRequest {

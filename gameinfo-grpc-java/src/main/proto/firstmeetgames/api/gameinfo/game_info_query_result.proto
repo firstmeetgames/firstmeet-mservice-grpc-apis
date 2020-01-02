@@ -5,6 +5,7 @@ option java_multiple_files = true;
 option java_package = "com.github.firstmeetgames.mservice.grpc.apis.gameinfo";
 option java_outer_classname = "GameInfoProto";
 
+
 message GameInfoPage {
   int32 total_pages = 1;
   int32 current_page = 2;
@@ -34,4 +35,25 @@ message GameInfo {
   string updated_at = 9;
 
   map<string, string> extension_data = 100;
+}
+
+message GameInfoForRecharge {
+  repeated PlatformInfo platform_info = 1;
+}
+
+message PlatformInfo {
+  string server_id = 1;
+  string server_name = 2;
+  repeated RegionInfo region_info = 3;
+}
+
+message RegionInfo {
+  string region_id = 1;
+  string region_name = 2;
+  repeated RoleInfo role_info = 3;
+}
+
+message RoleInfo {
+  string role_id = 1;
+  string role_name = 2;
 }
