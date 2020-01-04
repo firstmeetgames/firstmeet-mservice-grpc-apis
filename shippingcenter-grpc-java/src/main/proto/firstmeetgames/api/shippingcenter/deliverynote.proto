@@ -35,6 +35,7 @@ message DeliverynoteItem {
   int32 quantity = 12;
   int32 ruby_quantity = 13;
   string source = 14;
+  string ruby_type = 15;
 
   map<string, string> extension_data = 100;
 }
