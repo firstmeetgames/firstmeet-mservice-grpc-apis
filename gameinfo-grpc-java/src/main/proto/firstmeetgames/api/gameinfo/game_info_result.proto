@@ -6,51 +6,43 @@ option java_package = "com.github.firstmeetgames.mservice.grpc.apis.gameinfo";
 option java_outer_classname = "GameInfoProto";
 
 
-message GameInfoPage {
+message GameInterfacePage {
   int32 total_pages = 1;
   int32 current_page = 2;
   int32 page_size = 3;
   int64 total_elements = 4;
-  repeated GameInfo game_info = 5;
+  repeated GameInterface game_interface = 5;
 }
 
-message GameInfo {
+message GameInterface {
 
   string id = 1;
-
   string client_id = 2;
-
   string client_name = 3;
-
   string url = 4;
-
   string url_type = 5;
-
   string request_type = 6;
-
   string mocked = 7;
-
   string created_at = 8;
-
   string updated_at = 9;
-
   map<string, string> extension_data = 100;
+
 }
 
-message GameInfoForRecharge {
-  repeated PlatformInfo platform_info = 1;
+message GamePlatformServerRoleInfo {
+  repeated PlatformInfo platform_list = 1;
 }
 
 message PlatformInfo {
-  string server_id = 1;
-  string server_name = 2;
-  repeated RegionInfo region_info = 3;
+  string platform_id = 1;
+  string platform_name = 2;
+  repeated ServerInfo server_list = 3;
 }
 
-message RegionInfo {
-  string region_id = 1;
-  string region_name = 2;
-  repeated RoleInfo role_info = 3;
+message ServerInfo {
+  string server_id = 1;
+  string server_name = 2;
+  repeated RoleInfo role_list = 3;
 }
 
 message RoleInfo {
