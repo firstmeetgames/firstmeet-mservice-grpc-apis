@@ -14,16 +14,16 @@ import "firstmeetgames/api/gameinfo/game_info_result.proto";
 
 
 service GameInfoApi {
-  rpc QueryGameRoles(QueryGameRolesRequest) returns (QueryGameRolesResponse){
+  rpc GetGameRoles(GetGameRolesRequest) returns (GetGameRolesResponse){
   }
 
-  rpc QueryGameServers(QueryGameServersRequest) returns (QueryGameServersResponse){
+  rpc GetGameServers(GetGameServersRequest) returns (GetGameServersResponse){
   }
 
-  rpc QueryGamePlatforms(QueryGamePlatformsRequest) returns (QueryGamePlatformsResponse){
+  rpc GetGamePlatforms(GetGamePlatformsRequest) returns (GetGamePlatformsResponse){
   }
 
-  rpc QueryGamePlatformServerRoles(QueryGamePlatformServerRolesRequest) returns (QueryGamePlatformServerRolesResponse){
+  rpc GetGamePlatformServerRoles(GetGamePlatformServerRolesRequest) returns (GetGamePlatformServerRolesResponse){
   }
 
   rpc QueryGameInterfaces(QueryGameInterfacesRequest) returns (QueryGameInterfacesResponse){
@@ -45,7 +45,7 @@ service GameInfoApi {
   }
 }
 
-message QueryGameRolesRequest {
+message GetGameRolesRequest {
   string client_id = 1;
   string url_type = 2;
   string platform_id = 3;
@@ -53,38 +53,38 @@ message QueryGameRolesRequest {
   string user_id = 5;
 }
 
-message QueryGameRolesResponse {
+message GetGameRolesResponse {
   repeated RoleInfo role_list = 1;
   google.rpc.Status status = 2;
 }
 
-message QueryGameServersRequest {
+message GetGameServersRequest {
   string client_id = 1;
   string url_type = 2;
   string platform_id = 3;
 }
 
-message QueryGameServersResponse {
+message GetGameServersResponse {
   repeated ServerInfo server_list = 1;
   google.rpc.Status status = 2;
 }
 
-message QueryGamePlatformsRequest {
+message GetGamePlatformsRequest {
   string client_id = 1;
   string url_type = 2;
 }
 
-message QueryGamePlatformsResponse {
+message GetGamePlatformsResponse {
   repeated PlatformInfo platform_list = 1;
   google.rpc.Status status = 2;
 }
 
-message QueryGamePlatformServerRolesRequest {
+message GetGamePlatformServerRolesRequest {
   string client_id = 1;
   string user_id = 2;
 }
 
-message QueryGamePlatformServerRolesResponse {
+message GetGamePlatformServerRolesResponse {
   GamePlatformServerRoleInfo game_platform_server_role_info = 1;
   google.rpc.Status status = 2;
 }
