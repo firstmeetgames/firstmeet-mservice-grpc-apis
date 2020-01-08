@@ -28,10 +28,8 @@ service GameInfoApi {
 
   rpc GetGameInters(GetGameIntersRequest) returns (GetGameIntersResponse){
   }
-  
   rpc GetGameInter (GetGameInterRequest) returns (GetGameInterResponse) {
   }
-
   rpc UpdateGameInter (UpdateGameInterRequest) returns (UpdateGameInterResponse) {
   }
 
