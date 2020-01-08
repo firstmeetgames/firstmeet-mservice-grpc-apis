@@ -6,15 +6,15 @@ option java_package = "com.github.firstmeetgames.mservice.grpc.apis.gameinfo";
 option java_outer_classname = "GameInfoProto";
 
 
-message GameInterfacePage {
+message GameInterPage {
   int32 total_pages = 1;
   int32 current_page = 2;
   int32 page_size = 3;
   int64 total_elements = 4;
-  repeated GameInterface game_interface = 5;
+  repeated GameInter game_inter = 5;
 }
 
-message GameInterface {
+message GameInter {
 
   string id = 1;
   string client_id = 2;

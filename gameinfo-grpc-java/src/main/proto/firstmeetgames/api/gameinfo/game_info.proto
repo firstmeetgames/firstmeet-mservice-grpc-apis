@@ -26,22 +26,20 @@ service GameInfoApi {
   rpc GetGamePlatformServerRoles(GetGamePlatformServerRolesRequest) returns (GetGamePlatformServerRolesResponse){
   }
 
-  rpc QueryGameInterfaces(QueryGameInterfacesRequest) returns (QueryGameInterfacesResponse){
+  rpc GetGameInters(GetGameIntersRequest) returns (GetGameIntersResponse){
   }
-  
-  rpc GetGameInterface (GetGameInterfaceRequest) returns (GetGameInterfaceResponse) {
+  rpc GetGameInter (GetGameInterRequest) returns (GetGameInterResponse) {
   }
-
-  rpc UpdateGameInterface (UpdateGameInterfaceRequest) returns (UpdateGameInterfaceResponse) {
+  rpc UpdateGameInter (UpdateGameInterRequest) returns (UpdateGameInterResponse) {
   }
 
-  rpc AddGameInterface (AddGameInterfaceRequest) returns (AddGameInterfaceResponse) {
+  rpc AddGameInter (AddGameInterRequest) returns (AddGameInterResponse) {
   }
 
-  rpc DeleteGameInterface (DeleteGameInterfaceRequest) returns (DeleteGameInterfaceResponse) {
+  rpc DeleteGameInter (DeleteGameInterRequest) returns (DeleteGameInterResponse) {
   }
 
-  rpc DeleteGameInterfaceCache (DeleteGameInterfaceCacheRequest) returns (DeleteGameInterfaceCacheResponse) {
+  rpc DeleteGameInterCache (DeleteGameInterCacheRequest) returns (DeleteGameInterCacheResponse) {
   }
 }
 
@@ -89,56 +87,56 @@ message GetGamePlatformServerRolesResponse {
   google.rpc.Status status = 2;
 }
 
-message GetGameInterfaceRequest {
+message GetGameInterRequest {
   string client_id = 1;
   string url_type = 2;
 }
 
-message GetGameInterfaceResponse {
-  GameInterface game_interface = 1;
+message GetGameInterResponse {
+  GameInter game_inter = 1;
   google.rpc.Status status = 2;
 }
 
-message QueryGameInterfacesRequest {
+message GetGameIntersRequest {
   string client_id = 1;
   int32 page_size = 2;
   int32 page = 3;
 }
 
-message QueryGameInterfacesResponse {
-  GameInterfacePage game_interface_page = 1;
+message GetGameIntersResponse {
+  GameInterPage game_inter_page = 1;
   google.rpc.Status status = 2;
 }
 
-message UpdateGameInterfaceRequest {
-  GameInterface game_interface = 1;
+message UpdateGameInterRequest {
+  GameInter game_inter = 1;
 }
 
-message UpdateGameInterfaceResponse {
+message UpdateGameInterResponse {
   google.rpc.Status status = 1;
 }
 
-message AddGameInterfaceRequest {
-  GameInterface game_interface = 1;
+message AddGameInterRequest {
+  GameInter game_inter = 1;
 }
 
-message AddGameInterfaceResponse {
+message AddGameInterResponse {
   google.rpc.Status status = 1;
 }
 
-message DeleteGameInterfaceRequest {
+message DeleteGameInterRequest {
   string client_id = 1;
   string url_type = 2;
 }
 
-message DeleteGameInterfaceResponse {
+message DeleteGameInterResponse {
   google.rpc.Status status = 1;
 }
 
-message DeleteGameInterfaceCacheRequest {
+message DeleteGameInterCacheRequest {
 }
 
-message DeleteGameInterfaceCacheResponse {
+message DeleteGameInterCacheResponse {
   string result = 1; //OK or FAIL
   google.rpc.Status status = 2;
 }
