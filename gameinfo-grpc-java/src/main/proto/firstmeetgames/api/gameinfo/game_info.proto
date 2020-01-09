@@ -45,10 +45,9 @@ service GameInfoApi {
 
 message GetGameRolesRequest {
   string client_id = 1;
-  string url_type = 2;
-  string platform_id = 3;
-  string server_id = 4;
-  string user_id = 5;
+  string platform_id = 2;
+  string server_id = 3;
+  string user_id = 4;
 }
 
 message GetGameRolesResponse {
@@ -58,8 +57,7 @@ message GetGameRolesResponse {
 
 message GetGameServersRequest {
   string client_id = 1;
-  string url_type = 2;
-  string platform_id = 3;
+  string platform_id = 2;
 }
 
 message GetGameServersResponse {
@@ -69,7 +67,6 @@ message GetGameServersResponse {
 
 message GetGamePlatformsRequest {
   string client_id = 1;
-  string url_type = 2;
 }
 
 message GetGamePlatformsResponse {
