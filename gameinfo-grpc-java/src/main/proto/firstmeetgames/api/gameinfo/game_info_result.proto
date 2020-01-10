@@ -22,7 +22,7 @@ message GameInter {
   string url = 4;
   string url_type = 5;
   string request_type = 6;
-  string mocked = 7;
+  bool mocked = 7;
   string created_at = 8;
   string updated_at = 9;
   map<string, string> extension_data = 100;
