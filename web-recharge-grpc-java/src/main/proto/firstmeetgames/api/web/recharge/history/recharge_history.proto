@@ -71,8 +71,6 @@ message SaveRequest {
     int32 pay_way = 9;
     string amount = 10;
     string currecy = 11;
-    string swap_coin_amount = 12;
-    string give_coin_amount = 13;
 }
 message SaveResponse {
   RechargeHistory recharge_history = 1;
@@ -121,8 +119,6 @@ message RechargeHistory {
   int32 pay_way = 10;
   string amount = 11;
   string currency = 12;
-  string swap_coin_amount = 13;
-  string give_coin_amount = 14;
-  string created_at = 15;
-  string updated_at = 16;
+  string created_at = 13;
+  string updated_at = 14;
 }
