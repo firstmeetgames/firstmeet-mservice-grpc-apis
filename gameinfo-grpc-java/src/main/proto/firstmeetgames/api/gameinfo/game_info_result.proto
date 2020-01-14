@@ -18,13 +18,12 @@ message GameInter {
 
   string id = 1;
   string client_id = 2;
-  string client_name = 3;
-  string url = 4;
-  string url_type = 5;
-  string request_type = 6;
-  bool mocked = 7;
-  string created_at = 8;
-  string updated_at = 9;
+  string url = 3;
+  string url_type = 4;
+  string request_type = 5;
+  bool mocked = 6;
+  string created_at = 7;
+  string updated_at = 8;
   map<string, string> extension_data = 100;
 
 }
