@@ -53,13 +53,17 @@ message QueryRechargeConfigResponse {
 
 message SaveRequest {
   string client_id = 1;
-  string pay_way = 2;
-  string amount = 3;
-  string swap_ratio = 4;
-  int32 threshold = 5;
-  string give_ratio = 6;
-  string recharge_url = 7;
-  string tip_info = 8;
+  string client_secret = 2;
+  string pay_way = 3;
+  string amount = 4;
+  string currency = 5;
+  string client_token_uri = 6;
+  string send_verification_code_uri = 7;
+  string user_auth_uri = 8;
+  string wxpay_recharge_uri = 9;
+  string zfbpay_recharge_uri = 10;
+  string gamesinfo_uri = 11;
+  string tip_info = 12;
 }
 message SaveResponse {
   RechargeConfig recharge_config = 1;
@@ -92,13 +96,17 @@ message RechargeConfigResultPage {
 message RechargeConfig {
   string id = 1;
   string client_id = 2;
-  string pay_way = 3;
-  string amount = 4;
-  string swap_ratio = 5;
-  string threshold = 6;
-  string give_ratio = 7;
-  string recharge_url = 8;
-  string tip_info = 9;
-  string created_at = 10;
-  string updated_at = 11;
+  string client_secret = 3;
+  string pay_way = 4;
+  string amount = 5;
+  string currency = 6;
+  string client_token_uri = 7;
+  string send_verification_code_uri = 8;
+  string user_auth_uri = 9;
+  string wxpay_recharge_uri = 10;
+  string zfbpay_recharge_uri = 11;
+  string gamesinfo_uri = 12;
+  string tip_info = 13;
+  string created_at = 14;
+  string updated_at = 15;
 }
