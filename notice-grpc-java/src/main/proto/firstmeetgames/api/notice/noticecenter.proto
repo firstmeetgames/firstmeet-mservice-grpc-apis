@@ -11,23 +11,23 @@ import "firstmeetgames/api/notice/notice.proto";
 
 import "google/rpc/status.proto";
 service NoticeApi {
+  rpc GetNotices (GetNoticesRequest) returns (GetNoticesResponse) {
+  }
+
   rpc GetNotice (GetNoticeRequest) returns (GetNoticeResponse) {
-  }
-
-  rpc QueryNotices (QueryNoticeRequest) returns (QueryNoticeResponse) {
-  }
-
-  rpc UpdateNotice (UpdateNoticeRequest) returns (UpdateNoticeResponse) {
   }
 
   rpc AddNotice (AddNoticeRequest) returns (AddNoticeResponse) {
   }
 
-  rpc DeleteNotice (DeleteNoticeRequest) returns (DeleteNoticeResponse) {
+  rpc UpdateNotice (UpdateNoticeRequest) returns (UpdateNoticeResponse) {
+  }
+
+  rpc UpdateNoticeStatus (UpdateNoticeStatusRequest) returns (UpdateNoticeStatusResponse) {
   }
 }
 message GetNoticeRequest {
-  string notice_id = 1;
+  int64 id = 1;
 }
 
 message GetNoticeResponse {
@@ -35,19 +35,13 @@ message GetNoticeResponse {
   google.rpc.Status status = 2;
 }
 
-message QueryNoticeRequest {
-  string notice_type = 1;
-  string category = 2;
-  string title = 3;
-  string status = 4;
-  string start_at = 5;
-  string end_at = 6;
-  int32 page_size = 7;
-  int32 page = 8;
+message GetNoticesRequest {
+  string client_id = 1;
+  string status = 2;
 }
 
-message QueryNoticeResponse {
-  NoticePage notice_page = 1;
+message GetNoticesResponse {
+  NoticeResult notice_result = 1;
   google.rpc.Status status = 2;
 }
 
@@ -67,10 +61,11 @@ message AddNoticeResponse {
   google.rpc.Status status = 1;
 }
 
-message DeleteNoticeRequest {
-  string notice_id = 1;
+message UpdateNoticeStatusRequest {
+  int64 id = 1;
+  string status = 2;
 }
 
-message DeleteNoticeResponse {
+message UpdateNoticeStatusResponse {
   google.rpc.Status status = 1;
 }

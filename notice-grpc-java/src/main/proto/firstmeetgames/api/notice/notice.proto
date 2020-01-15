@@ -6,12 +6,8 @@ option java_multiple_files = true;
 option java_package = "com.github.firstmeetgames.mservice.grpc.apis.noticecenter";
 option java_outer_classname = "NoticeProto";
 
-message NoticePage {
-  int32 total_pages = 1;
-  int32 current_page = 2;
-  int32 page_size = 3;
-  int64 total_elements = 4;
-  repeated Notice notice = 5;
+message NoticeResult {
+  repeated Notice notice = 1;
 }
 
 message Notice {
@@ -19,19 +15,11 @@ message Notice {
   string client_id = 2;
   string platform_id = 3;
   string notice_type = 4;
-  string category = 5;
-  string nav_title = 6;
-  string title = 7;
-  string content = 8;
-  string author = 9;
-  string status = 10;
-  int32 order_num = 11;
-  string start_at = 12;
-  string end_at = 13;
-  string created_at = 14;
-  string updated_at = 15;
-  string notice_id = 16;
-
+  string title = 5;
+  string content = 6;
+  string status = 7;
+  string created_at = 8;
+  string updated_at = 9;
 
   map<string, string> extension_data = 100;
 }
