@@ -1,5 +1,5 @@
 syntax = "proto3";
-package firstmeetgames.api.shoppecenter;
+package firstmeetgames.api.noticecenter;
 
 
 option java_multiple_files = true;
