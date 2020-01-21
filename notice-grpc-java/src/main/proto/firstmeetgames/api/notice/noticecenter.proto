@@ -28,6 +28,9 @@ service NoticeApi {
 
   rpc GetNoticeSdk (GetNoticeSdkRequest) returns (GetNoticeSdkResponse) {
   }
+
+  rpc DeleteNoticeCache (DeleteNoticeCacheRequest) returns (DeleteNoticeCacheResponse) {
+  }
 }
 message GetNoticeRequest {
   int64 id = 1;
@@ -82,5 +85,13 @@ message GetNoticeSdkRequest {
 
 message GetNoticeSdkResponse {
   NoticeResult notice_result = 1;
+  google.rpc.Status status = 2;
+}
+
+message DeleteNoticeCacheRequest {
+}
+
+message DeleteNoticeCacheResponse {
+  string result = 1; //OK or FAIL
   google.rpc.Status status = 2;
 }
