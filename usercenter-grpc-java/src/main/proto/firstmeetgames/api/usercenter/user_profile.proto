@@ -24,8 +24,10 @@ message UserProfile {
   string client_id = 4;
   bool upgraded = 5;
   bool mobile_bound = 6;
-  bool email_verified = 7;
-  bool real_name_authenticated = 8;
+  //bool email_verified = 7;
+  bool email_bound= 7;
+  //bool real_name_authenticated = 8;
+  string registered_at = 8;
   string created_at = 9;
   string updated_at = 10;
   string ttg = 11;
