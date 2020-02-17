@@ -46,8 +46,10 @@ message UserInfo {
   string client_id = 4;
   bool upgraded = 5;
   bool mobile_bound = 6;
-  bool email_verified = 7;
-  bool real_name_authenticated = 8;
+  //bool email_verified = 7;
+  bool email_bound= 7;
+  //bool real_name_authenticated = 8;
+  string registered_at = 8;
   string ttg = 9;
   bool enabled = 10;
   map<string, string> extension_data = 100;
