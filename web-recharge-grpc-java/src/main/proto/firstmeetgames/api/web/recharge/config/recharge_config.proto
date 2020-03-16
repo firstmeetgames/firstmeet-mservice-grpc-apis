@@ -54,16 +54,19 @@ message QueryRechargeConfigResponse {
 message SaveRequest {
   string client_id = 1;
   string client_secret = 2;
-  string pay_way = 3;
-  string amount = 4;
-  string currency = 5;
-  string client_token_uri = 6;
-  string send_verification_code_uri = 7;
-  string user_auth_uri = 8;
-  string wxpay_recharge_uri = 9;
-  string zfbpay_recharge_uri = 10;
-  string gamesinfo_uri = 11;
-  string tip_info = 12;
+  string language = 3;
+  string pay_way = 4;
+  string amount = 5;
+  string currency = 6;
+  string cdn_uri = 7;
+  string usercenter_uri = 8;
+  string cjuser_uri = 9;
+  string wxpay_recharge_uri = 10;
+  string zfbpay_recharge_uri = 11;
+  string gamesinfo_uri = 12;
+  string tpl_callback_uri = 13;
+  string operating_area = 14;
+  string tip_info = 15;
 }
 message SaveResponse {
   RechargeConfig recharge_config = 1;
