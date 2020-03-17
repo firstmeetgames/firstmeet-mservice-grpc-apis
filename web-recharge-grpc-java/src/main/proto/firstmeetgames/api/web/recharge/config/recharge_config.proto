@@ -64,9 +64,12 @@ message SaveRequest {
   string wxpay_recharge_uri = 10;
   string zfbpay_recharge_uri = 11;
   string gamesinfo_uri = 12;
-  string tpl_callback_uri = 13;
-  string operating_area = 14;
-  string tip_info = 15;
+  string tpl_login_uri = 13;
+  string tpl_callback_uri = 14;
+  string operating_area = 15;
+  string tip_info = 16;
+  string fb_app_id = 17;
+  string fb_app_secret = 18;
 }
 message SaveResponse {
   RechargeConfig recharge_config = 1;
@@ -110,9 +113,12 @@ message RechargeConfig {
   string wxpay_recharge_uri = 11;
   string zfbpay_recharge_uri = 12;
   string gamesinfo_uri = 13;
-  string tpl_callback_uri = 14;
-  string operating_area = 15;
-  string tip_info = 16;
-  string created_at = 17;
-  string updated_at = 18;
+  string tpl_login_uri = 14;
+  string tpl_callback_uri = 15;
+  string operating_area = 16;
+  string tip_info = 17;
+  string fb_app_id = 18;
+  string fb_app_secret = 19;
+  string created_at = 20;
+  string updated_at = 21;
 }
