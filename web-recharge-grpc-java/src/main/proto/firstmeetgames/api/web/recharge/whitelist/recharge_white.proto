@@ -58,7 +58,7 @@ message QueryRechargeWhiteResponse {
 message SaveRequest{
   string client_id = 1;
   string user_id = 2;
-  string enabled = 3;
+  bool enabled = 3;
 }
 
 message SaveResponse{
@@ -97,7 +97,7 @@ message RechargeWhiteList{
   string id = 1;
   string client_id = 2;
   string user_id = 3;
-  string enabled = 4;
+  bool enabled = 4;
   string created_at = 5;
   string updated_at = 6;
 }
