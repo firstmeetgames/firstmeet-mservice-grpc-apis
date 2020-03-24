@@ -72,7 +72,7 @@ message SaveRequest {
     string role_name = 8;
     int32 pay_way = 9;
     string amount = 10;
-    string currecy = 11;
+    string currency = 11;
 }
 
 message SaveResponse {
