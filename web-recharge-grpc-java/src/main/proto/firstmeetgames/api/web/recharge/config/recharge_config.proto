@@ -36,6 +36,7 @@ service RechargeConfigApi {
 message GetRechargeConfigRequest {
   string client_id = 1;
 }
+
 message GetRechargeConfigResponse {
   RechargeConfig recharge_config = 1;
   google.rpc.Status status = 2;
@@ -46,6 +47,7 @@ message QueryRechargeConfigRequest {
   int32 page_size = 2;
   string client_id = 3;
 }
+
 message QueryRechargeConfigResponse {
   RechargeConfigResultPage recharge_config_result_page = 1;
   google.rpc.Status status = 2;
@@ -53,24 +55,25 @@ message QueryRechargeConfigResponse {
 
 message SaveRequest {
   string client_id = 1;
-  string client_secret = 2;
-  string language = 3;
+  string language = 2;
+  string login_way = 3;
   string pay_way = 4;
   string amount = 5;
   string currency = 6;
-  string cdn_uri = 7;
-  string usercenter_uri = 8;
-  string cjuser_uri = 9;
-  string wxpay_recharge_uri = 10;
-  string zfbpay_recharge_uri = 11;
-  string gamesinfo_uri = 12;
-  string tpl_login_uri = 13;
-  string tpl_callback_uri = 14;
-  string operating_area = 15;
-  string tip_info = 16;
+  string tip_info = 7;
+  string client_secret = 8;
+  string cdn_uri = 9;
+  string usercenter_uri = 10;
+  string cjuser_uri = 11;
+  string wxpay_recharge_uri = 12;
+  string zfbpay_recharge_uri = 13;
+  string gamesinfo_uri = 14;
+  bool fb_enabled = 15;
+  string fb_login_uri = 16;
   string fb_app_id = 17;
   string fb_app_secret = 18;
 }
+
 message SaveResponse {
   RechargeConfig recharge_config = 1;
   google.rpc.Status status = 2;
@@ -79,13 +82,15 @@ message SaveResponse {
 message DeleteRequest {
   string client_id = 1;
 }
+
 message DeleteResponse {
   int32 affected_results = 1;
   google.rpc.Status status = 2;
 }
 
-message ClearCacheRequest{
+message ClearCacheRequest {
 }
+
 message ClearCacheResponse {
   string result = 1; //OK or FAIL
   google.rpc.Status status = 2;
@@ -99,26 +104,27 @@ message RechargeConfigResultPage {
 
   repeated RechargeConfig config = 100;
 }
+
 message RechargeConfig {
   string id = 1;
   string client_id = 2;
-  string client_secret = 3;
-  string language = 4;
+  string language = 3;
+  string login_way = 4;
   string pay_way = 5;
   string amount = 6;
   string currency = 7;
-  string cdn_uri = 8;
-  string usercenter_uri = 9;
-  string cjuser_uri = 10;
-  string wxpay_recharge_uri = 11;
-  string zfbpay_recharge_uri = 12;
-  string gamesinfo_uri = 13;
-  string tpl_login_uri = 14;
-  string tpl_callback_uri = 15;
-  string operating_area = 16;
-  string tip_info = 17;
+  string tip_info = 8;
+  string client_secret = 9;
+  string cdn_uri = 10;
+  string usercenter_uri = 11;
+  string cjuser_uri = 12;
+  string wxpay_recharge_uri = 13;
+  string zfbpay_recharge_uri = 14;
+  string gamesinfo_uri = 15;
+  bool fb_enabled = 16;
+  string fb_login_uri = 17;
   string fb_app_id = 18;
   string fb_app_secret = 19;
-  string created_at = 20;
-  string updated_at = 21;
+  string created_at = 100;
+  string updated_at = 101;
 }
