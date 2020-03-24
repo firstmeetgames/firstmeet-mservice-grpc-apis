@@ -40,6 +40,7 @@ message GetHistoryRequest {
   string region_id = 4;
   string role_id = 5;
 }
+
 message GetHistoryResponse {
   RechargeHistory recharge_history = 1;
   google.rpc.Status status = 2;
@@ -54,6 +55,7 @@ message QueryRechargeHistoryRequest {
   string region_id = 6;
   string role_id = 7;
 }
+
 message QueryRechargeHistoryResponse {
   RechargeHistoryResultPage recharge_history_result_page = 1;
   google.rpc.Status status = 2;
@@ -72,6 +74,7 @@ message SaveRequest {
     string amount = 10;
     string currecy = 11;
 }
+
 message SaveResponse {
   RechargeHistory recharge_history = 1;
   google.rpc.Status status = 2;
@@ -84,6 +87,7 @@ message DeleteRequest {
   string region_id = 4;
   string role_id = 5;
 }
+
 message DeleteResponse {
   int32 affected_results = 1;
   google.rpc.Status status = 2;
@@ -91,11 +95,11 @@ message DeleteResponse {
 
 message ClearCacheRequest{
 }
+
 message ClearCacheResponse {
   string result = 1; //OK or FAIL
   google.rpc.Status status = 2;
 }
-
 
 message RechargeHistoryResultPage {
   int32 total_pages = 1;

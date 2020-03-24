@@ -37,6 +37,7 @@ message GetWhiteListRequest {
   string client_id = 1;
   string user_id = 2;
 }
+
 message GetWhiteListResponse {
   RechargeWhiteList whitelist = 1;
   google.rpc.Status status = 2;
@@ -48,6 +49,7 @@ message QueryRechargeWhiteRequest {
   string client_id = 3;
   string user_id = 4;
 }
+
 message QueryRechargeWhiteResponse {
   RechargeWhiteResultPage recharge_white_result_page = 1;
   google.rpc.Status status = 2;
@@ -58,6 +60,7 @@ message SaveRequest{
   string user_id = 2;
   string enabled = 3;
 }
+
 message SaveResponse{
   RechargeWhiteList whitelist = 1;
   google.rpc.Status status = 2;
@@ -67,6 +70,7 @@ message DeleteRequest {
   string client_id = 1;
   string user_id = 2;
 }
+
 message DeleteResponse {
   int32 affected_results = 1;
   google.rpc.Status status = 2;
@@ -74,6 +78,7 @@ message DeleteResponse {
 
 message ClearCacheRequest{
 }
+
 message ClearCacheResponse {
   string result = 1; //OK or FAIL
   google.rpc.Status status = 2;
@@ -87,6 +92,7 @@ message RechargeWhiteResultPage {
 
   repeated RechargeWhiteList whitelist = 100;
 }
+
 message RechargeWhiteList{
   string id = 1;
   string client_id = 2;
