@@ -62,16 +62,17 @@ message SaveRequest {
   string currency = 6;
   string tip_info = 7;
   string client_secret = 8;
-  string cdn_uri = 9;
-  string usercenter_uri = 10;
-  string cjuser_uri = 11;
-  string wxpay_recharge_uri = 12;
-  string zfbpay_recharge_uri = 13;
-  string gamesinfo_uri = 14;
-  bool fb_enabled = 15;
-  string fb_login_uri = 16;
-  string fb_app_id = 17;
-  string fb_app_secret = 18;
+  string domain_uri = 9;
+  string cdn_uri = 10;
+  string usercenter_uri = 11;
+  string cjuser_uri = 12;
+  string wxpay_recharge_uri = 13;
+  string zfbpay_recharge_uri = 14;
+  string gamesinfo_uri = 15;
+  bool fb_enabled = 16;
+  string fb_login_uri = 17;
+  string fb_app_id = 18;
+  string fb_app_secret = 19;
 }
 
 message SaveResponse {
@@ -115,16 +116,17 @@ message RechargeConfig {
   string currency = 7;
   string tip_info = 8;
   string client_secret = 9;
-  string cdn_uri = 10;
-  string usercenter_uri = 11;
-  string cjuser_uri = 12;
-  string wxpay_recharge_uri = 13;
-  string zfbpay_recharge_uri = 14;
-  string gamesinfo_uri = 15;
-  bool fb_enabled = 16;
-  string fb_login_uri = 17;
-  string fb_app_id = 18;
-  string fb_app_secret = 19;
+  string domain_uri = 10;
+  string cdn_uri = 11;
+  string usercenter_uri = 12;
+  string cjuser_uri = 13;
+  string wxpay_recharge_uri = 14;
+  string zfbpay_recharge_uri = 15;
+  string gamesinfo_uri = 16;
+  bool fb_enabled = 17;
+  string fb_login_uri = 18;
+  string fb_app_id = 19;
+  string fb_app_secret = 20;
   string created_at = 100;
   string updated_at = 101;
 }
