@@ -21,6 +21,7 @@ message Order {
   string reason = 12;
   string created_at = 13;
   string updated_at = 14;
+  string payee = 15;
 
   repeated OrderItem item = 100;
 }
