@@ -42,8 +42,9 @@ message QueryOrderRequest {
   int32 page_size = 7;
   int32 page = 8;
   string status = 9;
-  string pay_channel = 10;
-  string pay_os = 11;
+  string source = 10;
+  string pay_channel = 11;
+  string pay_os = 12;
 }
 
 message QueryOrderResponse {
