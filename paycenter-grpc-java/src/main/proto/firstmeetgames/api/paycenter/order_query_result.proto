@@ -49,6 +49,7 @@ message Order {
   string updated_at = 33;
   string ruby_type = 34;
   string payee = 35;
+  string product_name = 36;
 
   map<string, string> extension_data = 100;
 }
