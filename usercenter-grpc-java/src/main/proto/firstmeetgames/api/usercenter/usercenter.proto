@@ -101,6 +101,7 @@ message CheckClientRequest {
   string client_id = 1;
   string client_secret = 2;
   string ttg = 3;
+  bool check_secret = 4;
 }
 
 message CheckClientResponse {
