@@ -50,6 +50,7 @@ message Order {
   string ruby_type = 34;
   string payee = 35;
   string product_name = 36;
+  string shipping_url = 37;
 
   map<string, string> extension_data = 100;
 }
