@@ -30,7 +30,6 @@ message OrderItemParam {
   int32 quantity = 11;
   int32 ruby_quantity = 12;
   string product_name = 13;
-  string shipping_url = 14;
 
   map<string, string> extension_data = 100;
 }

@@ -17,7 +17,6 @@ message Deliverynote {
   string ttg = 8;
   string developer_payload = 9;
   string created_at = 10;
-  string shipping_url = 11;
   repeated DeliverynoteItem item = 100;
 }
 
