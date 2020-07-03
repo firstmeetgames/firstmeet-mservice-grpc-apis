@@ -45,7 +45,7 @@ message QueryOrderRequest {
   string source = 10;
   string pay_channel = 11;
   string pay_os = 12;
-  bool is_refunded = 13;
+  string is_refunded = 13;
 }
 
 message QueryOrderResponse {
