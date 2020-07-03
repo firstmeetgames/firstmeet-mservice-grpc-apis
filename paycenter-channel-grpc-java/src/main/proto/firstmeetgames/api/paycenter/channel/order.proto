@@ -22,6 +22,7 @@ message Order {
   string created_at = 13;
   string updated_at = 14;
   string payee = 15;
+  bool is_refunded = 16;
 
   repeated OrderItem item = 100;
 }
