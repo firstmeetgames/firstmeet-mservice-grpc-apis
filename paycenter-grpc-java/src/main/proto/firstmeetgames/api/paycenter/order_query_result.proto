@@ -51,6 +51,7 @@ message Order {
   string payee = 35;
   string product_name = 36;
   bool is_refunded = 37;
+  string refunded_at = 38;
 
   map<string, string> extension_data = 100;
 }
