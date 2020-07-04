@@ -105,6 +105,7 @@ message OrderAmendedEvent {
 message OrderRefundedEvent {
   string order_id = 1;
   string pay_channel = 2;
+  bool is_refunded = 3;
   google.protobuf.Timestamp created_at = 10;
 }
 
