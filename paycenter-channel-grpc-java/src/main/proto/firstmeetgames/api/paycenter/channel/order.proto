@@ -21,6 +21,8 @@ message Order {
   string reason = 12;
   string created_at = 13;
   string updated_at = 14;
+  bool is_refunded = 16;
+  string refunded_at = 17;
 
   repeated OrderItem item = 100;
 }

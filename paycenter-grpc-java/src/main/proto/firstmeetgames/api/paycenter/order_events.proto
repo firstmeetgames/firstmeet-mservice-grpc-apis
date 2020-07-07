@@ -13,6 +13,7 @@ message OrderEvent {
     OrderCreatedEvent order_created_event = 2;
     OrderPaidEvent order_paid_event = 3;
     OrderShippedEvent order_shipped_event = 4;
+    OrderRefundedEvent order_refunded_event = 5;
   }
 }
 
@@ -21,6 +22,7 @@ enum OrderEventCategory {
   ORDER_CREATED_EVENT = 1;
   ORDER_PAID_EVENT = 2;
   ORDER_SHIPPED_EVENT = 3;
+  ORDER_REFUNDED_EVENT = 4;
 }
 
 message OrderCreatedEvent {
@@ -40,6 +42,13 @@ message OrderShippedEvent {
   string order_id = 1;
   string pay_channel = 2;
   string status = 3;
+  google.protobuf.Timestamp created_at = 100;
+}
+
+message OrderRefundedEvent {
+  string order_id = 1;
+  string pay_channel = 2;
+  bool is_refunded = 3;
   google.protobuf.Timestamp created_at = 100;
 }
 
