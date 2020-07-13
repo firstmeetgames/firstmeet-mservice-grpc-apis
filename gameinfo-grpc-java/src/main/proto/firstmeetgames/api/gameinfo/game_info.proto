@@ -14,22 +14,24 @@ import "firstmeetgames/api/gameinfo/game_info_result.proto";
 
 
 service GameInfoApi {
-  rpc GetGameRoles(GetGameRolesRequest) returns (GetGameRolesResponse){
+  rpc GetGameRoles (GetGameRolesRequest) returns (GetGameRolesResponse) {
   }
 
-  rpc GetGameServers(GetGameServersRequest) returns (GetGameServersResponse){
+  rpc GetGameServers (GetGameServersRequest) returns (GetGameServersResponse) {
   }
 
-  rpc GetGamePlatforms(GetGamePlatformsRequest) returns (GetGamePlatformsResponse){
+  rpc GetGamePlatforms (GetGamePlatformsRequest) returns (GetGamePlatformsResponse) {
   }
 
-  rpc GetGamePlatformServerRoles(GetGamePlatformServerRolesRequest) returns (GetGamePlatformServerRolesResponse){
+  rpc GetGamePlatformServerRoles (GetGamePlatformServerRolesRequest) returns (GetGamePlatformServerRolesResponse) {
   }
 
-  rpc GetGameInters(GetGameIntersRequest) returns (GetGameIntersResponse){
+  rpc GetGameInters (GetGameIntersRequest) returns (GetGameIntersResponse) {
   }
+
   rpc GetGameInter (GetGameInterRequest) returns (GetGameInterResponse) {
   }
+
   rpc UpdateGameInter (UpdateGameInterRequest) returns (UpdateGameInterResponse) {
   }
 
