@@ -46,6 +46,7 @@ message QueryOrderRequest {
   string pay_channel = 11;
   string pay_os = 12;
   string refunded = 13;
+  string channel_id = 14;
 }
 
 message QueryOrderResponse {
