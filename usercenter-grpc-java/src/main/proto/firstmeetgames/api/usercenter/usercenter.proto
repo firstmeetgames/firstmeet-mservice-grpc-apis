@@ -51,6 +51,9 @@ service UsercenterApi {
 
   rpc ResetTokenValid (ResetTokenValidRequest) returns (ResetTokenValidResponse) {
   }
+
+  rpc GetUsers (GetUsersRequest) returns (GetUsersResponse) {
+  }
 }
 
 message GetClientRequest {
@@ -177,4 +180,13 @@ message ResetTokenValidRequest {
 
 message ResetTokenValidResponse {
   google.rpc.Status status = 1;
+}
+
+message GetUsersRequest {
+  repeated string user_id = 1;
+}
+
+message GetUsersResponse {
+  repeated UserProfile user_profile = 1;
+  google.rpc.Status status = 9;
 }
